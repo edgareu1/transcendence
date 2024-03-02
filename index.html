@@ -4,8 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Transcendence</title>
+	<link rel="stylesheet" href="/static/css/index.css">
 </head>
 <body>
-	<h1>HELLO WORLD</h1>
+	<nav class="navbar">
+		<a href="/" class="navbar__link" data-link>Home</a>
+		<a href="/sign-up" class="navbar__link" data-link>Sign-up</a>
+		<a href="/sign-in" class="navbar__link" data-link>Sign-in</a>
+		<a href="/dashboard" class="navbar__link" data-link>Dashboard</a>
+	</nav>
+
+	<div id="app"></div>
+
+	<script type="module" src="/static/js/index.js"></script>
 </body>
 </html>

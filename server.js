@@ -5,6 +5,11 @@ const app = express();
 const port = (process.env.PORT || 3000);
 
 app.get("/*", (req, res) => {
+	if (/^.*(?:\.js|\.css)$/.test(req.url)) {
+		res.sendFile(path.resolve(__dirname, req.path.slice(1)));
+		return ;
+	}
+
 	res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
