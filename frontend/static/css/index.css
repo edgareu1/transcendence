@@ -1,31 +1,14 @@
 body {
-	--nav-width: 200px;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
-	margin: 0 0 0 var(--nav-width);
 }
 
+main {
+	margin-top: 66px;
+	padding-top: 24px;
+}
+
+/* Override Bootstrap */
 .navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: var(--nav-width);
-	background-color: #222222;
-}
-
-.navbar__link {
-	display: block;
-	color: #eeeeee;
-	font-weight: 500;
-	text-decoration: none;
-	padding: 12px 18px;
-}
-
-.navbar__link:hover {
-	background: #FFFFFF0D;
-}
-
-#app {
-	padding: 2em;
+	--bs-navbar-nav-link-padding-x: 1rem !important;
 }

@@ -4,21 +4,72 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Transcendence</title>
+
+	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="/static/css/index.css">
 
 	<!-- Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-	<nav class="navbar">
-		<a href="/" class="navbar__link" data-link>Home</a>
-		<a href="/sign-up" class="navbar__link" data-link>Sign-up</a>
-		<a href="/sign-in" class="navbar__link" data-link>Sign-in</a>
-		<a href="/dashboard" class="navbar__link" data-link>Dashboard</a>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+		<div class="container">
+			<a class="navbar-brand" href="/" data-link>
+				<img src="/static/images/logo-42.png" style="height: 40px;"/>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/" data-link>
+							Home
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/dashboard" data-link>
+							Dashboard</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							User Management
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="/sign-up" data-link>
+									Sign-up
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/sign-in" data-link>
+									Sign-in
+								</a>
+							</li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li>
+								<a class="dropdown-item" href="/" data-link>
+									Home
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 
-	<div id="app"></div>
+	<!-- Content -->
+	<main>
+		<div id="app" class="container"></div>
+	</main>
 
+	<!-- Main Script -->
 	<script type="module" src="/static/js/index.js"></script>
 
 	<!-- Bootstrap -->
