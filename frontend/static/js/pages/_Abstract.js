@@ -3,6 +3,8 @@ export default class {
 		this.params = props;
 	}
 
+	addFunctionality() {}
+
 	async getHtml() {
 		return "";
 	}
