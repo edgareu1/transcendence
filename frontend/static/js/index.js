@@ -14,11 +14,6 @@ const doesPathMatch = (path) => {
 	const regex = new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
 	return (location.pathname.match(regex) !== null)
-}
-
-const navigateTo = (url) => {
-	history.pushState(null, null, url);
-	router();
 };
 
 const router = async () => {
@@ -33,10 +28,48 @@ const router = async () => {
 	document.querySelector("#app").innerHTML = await page.getHtml();
 	document.title = thisRoute.title;
 
-	await page.addFunctionality();
+	page.addFunctionality();
 };
 
-window.addEventListener("popstate", router);
+const navigateTo = (url) => {
+	history.pushState(null, null, url);
+	router();
+};
+
+const initi18next = async () => {
+	const locales = ['en', 'pt', 'es'];
+
+	await Promise.all(locales.map(async locale => {
+		return fetch(`/static/locales/${locale}.json`)
+			.then(res => {
+				if (!res.ok) {
+					throw new Error(`Failed to fetch translation for ${locale}`);
+				}
+				return res.json();
+			})
+			.then(jsonData => {
+				return {
+					[locale]: {
+						translation: jsonData
+					}
+				}
+			})
+			.catch(error => {
+				throw new Error(`Failed to fetch or parse the translation for ${locale}: ${error}`);
+			});
+		})).then(localesData => {
+			i18next.init({
+				lng: locales[0],
+				fallbackLng: locales[0],
+				resources: localesData.reduce((acc, curr) => ({ ...acc, ...curr }), {})
+			});
+			i18next.languages = ['en', 'pt', 'es'];
+			i18next.on('languageChanged', router)
+		})
+		.catch(error => {
+			throw new Error(`Failed to initiate the i18next: ${error}`);
+		});
+};
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.body.addEventListener("click", e => {
@@ -46,5 +79,5 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	router();
+	initi18next().then(router);
 });

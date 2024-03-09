@@ -5,7 +5,7 @@ const app = express();
 const port = (process.env.PORT || 3000);
 
 app.get("/*", (req, res) => {
-	if (/^.*(?:\.js|\.css|\.png)$/.test(req.url)) {
+	if (/^.*(?:\.js|\.css|\.png|\.json)$/.test(req.url)) {
 		res.sendFile(path.resolve(__dirname, req.path.slice(1)));
 		return ;
 	}
