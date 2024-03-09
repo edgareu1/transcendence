@@ -1,8 +1,9 @@
+import Navbar from "./components/Navbar.js";
 import Dashboard from "./pages/Dashboard.js";
 import Home from "./pages/Home.js";
 import SignIn from "./pages/SignIn.js";
 import SignUp from "./pages/SignUp.js";
-import Navbar from "./components/Navbar.js";
+import { LOCALES } from "../variables.js";
 
 const ROUTES = [
 	{ path: "/", title: "Home", page: Home },
@@ -41,9 +42,7 @@ const navigateTo = (url) => {
 };
 
 const initi18next = async () => {
-	const locales = ['en', 'pt', 'es'];
-
-	await Promise.all(locales.map(async locale => {
+	await Promise.all(LOCALES.map(async locale => {
 		return fetch(`/static/locales/${locale}.json`)
 			.then(res => {
 				if (!res.ok) {
@@ -63,11 +62,10 @@ const initi18next = async () => {
 			});
 		})).then(localesData => {
 			i18next.init({
-				lng: locales[0],
-				fallbackLng: locales[0],
+				lng: LOCALES[0],
+				fallbackLng: LOCALES[0],
 				resources: localesData.reduce((acc, curr) => ({ ...acc, ...curr }), {})
 			});
-			i18next.languages = ['en', 'pt', 'es'];
 			i18next.on('languageChanged', router)
 		})
 		.catch(error => {
@@ -79,11 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.body.addEventListener("click", e => {
 		let currentElement = e.target;
 
+		if (currentElement.matches("[data-link-locale]")) {
+			e.preventDefault();
+			i18next.changeLanguage(currentElement.getAttribute('data-link-locale'))
+			return;
+		}
+
 		while (currentElement.tagName && (currentElement.matches("[data-link]") || currentElement.parentNode)) {
 			if (currentElement.matches("[data-link]")) {
 				e.preventDefault();
 				navigateTo(currentElement.href);
-				break;
+				return;
 			}
 
 			currentElement = currentElement.parentNode;

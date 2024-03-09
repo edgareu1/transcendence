@@ -8,6 +8,18 @@ main {
 	padding-top: 24px;
 }
 
+@media (max-width: 992px) {
+	.navbar > .container {
+		padding-right: 132px;
+	}
+
+	.language-toggle__wrapper {
+		position: absolute !important;
+		top: 6px;
+		right: 0;
+	}
+}
+
 /* Override Bootstrap */
 .navbar {
 	--bs-navbar-nav-link-padding-x: 1rem !important;

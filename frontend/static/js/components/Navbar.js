@@ -1,16 +1,18 @@
 import Abstract from "./_Abstract.js";
+import LanguageToggle from "./LanguageToggle.js";
 
 export default class extends Abstract {
 	constructor(props) {
 		super(props);
 
 		this.params = props;
+		this.languageToggle = new LanguageToggle();
 	}
 
 	async getHtml() {
 		return `
 			<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
-				<div class="container">
+				<div class="container position-relative">
 					<a class="navbar-brand" href="/" data-link>
 						<img src="/static/images/logo-42.png" style="height: 40px;"/>
 					</a>
@@ -58,6 +60,8 @@ export default class extends Abstract {
 							</li>
 						</ul>
 					</div>
+
+					${await this.languageToggle.getHtml()}
 				</div>
 			</nav>
 		`;
