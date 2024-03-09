@@ -1,0 +1,49 @@
+{
+	"navbar": {
+		"home": "Home",
+		"dashboard": "Dashboard",
+		"userManagement": "User Management",
+		"signUp": "Sign-up",
+		"signIn": "Sign-in"
+	},
+	"dashboard": {
+		"title": "Dashboard"
+	},
+	"home": {
+		"title": "Home"
+	},
+	"signIn": {
+		"title": "Sign-in",
+		"fields": {
+			"email": {
+				"label": "Email address",
+				"invalidFeedback": "Please choose a valid email."
+			},
+			"password": {
+				"label": "Password",
+				"invalidFeedback": "Please choose a valid password."
+			}
+		},
+		"submitButton": "Submit"
+	},
+	"signUp": {
+		"title": "Sign-up",
+		"fields": {
+			"email": {
+				"label": "Email address",
+				"invalidFeedback": "Please choose a valid email.",
+				"help": "We'll never share your email with anyone else."
+			},
+			"username": {
+				"label": "Username",
+				"invalidFeedback": "Please choose a valid username.",
+				"help": "How the other players will see you"
+			},
+			"password": {
+				"label": "Password",
+				"invalidFeedback": "Please choose a valid password."
+			}
+		},
+		"submitButton": "Submit"
+	}
+}

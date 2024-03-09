@@ -1,4 +1,4 @@
-import Abstract from "./_Abstract.js";
+import Abstract from "../components/_Abstract.js";
 
 export default class extends Abstract {
 	constructor(props) {
@@ -9,7 +9,9 @@ export default class extends Abstract {
 
 	async getHtml() {
 		return `
-			<h1>Home</h1>
+			<h1>
+				${i18next.t('home.title')}
+			</h1>
 		`;
 	}
 }

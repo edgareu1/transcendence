@@ -1,4 +1,4 @@
-import Abstract from "./_Abstract.js";
+import Abstract from "../components/_Abstract.js";
 
 export default class extends Abstract {
 	constructor(props) {
@@ -33,36 +33,36 @@ export default class extends Abstract {
 	async getHtml() {
 		return `
 			<h1 class="mb-4">
-				Sign-up
+				${i18next.t('signIn.title')}
 			</h1>
 
 			<form class="needs-validation" novalidate>
 				<div class="mb-4">
 					<label for="email" class="form-label">
-						Email address
+						${i18next.t('signIn.fields.email.label')}
 					</label>
 					<div class="input-group has-validation">
 						<input type="email" class="form-control" id="email" name="email" required>
 						<div class="invalid-feedback">
-							Please choose a valid email.
+							${i18next.t('signIn.fields.email.invalidFeedback')}
 						</div>
 					</div>
 				</div>
 
 				<div class="mb-4">
 					<label for="password" class="form-label">
-						Password
+						${i18next.t('signIn.fields.password.label')}
 					</label>
 					<div class="input-group has-validation">
 						<input type="password" class="form-control" id="password" name="password" minlength="8" required>
 						<div class="invalid-feedback">
-							Please choose a valid password.
+							${i18next.t('signIn.fields.password.invalidFeedback')}
 						</div>
 					</div>
 				</div>
 
 				<button type="submit" class="btn btn-primary">
-					Submit
+					${i18next.t('signIn.submitButton')}
 				</button>
 			</form>
 		`;
