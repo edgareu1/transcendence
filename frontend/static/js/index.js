@@ -2,6 +2,7 @@ import Dashboard from "./pages/Dashboard.js";
 import Home from "./pages/Home.js";
 import SignIn from "./pages/SignIn.js";
 import SignUp from "./pages/SignUp.js";
+import Navbar from "./components/Navbar.js";
 
 const ROUTES = [
 	{ path: "/", title: "Home", page: Home },
@@ -24,6 +25,9 @@ const router = async () => {
 	}
 
 	const page = new thisRoute.page({ title: thisRoute.title });
+
+	const navbar = new Navbar();
+	document.querySelector("#navbar").innerHTML = await navbar.getHtml();
 
 	document.querySelector("#app").innerHTML = await page.getHtml();
 	document.title = thisRoute.title;
@@ -73,9 +77,16 @@ const initi18next = async () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.body.addEventListener("click", e => {
-		if (e.target.matches("[data-link]")) {
-			e.preventDefault();
-			navigateTo(e.target.href);
+		let currentElement = e.target;
+
+		while (currentElement.tagName && (currentElement.matches("[data-link]") || currentElement.parentNode)) {
+			if (currentElement.matches("[data-link]")) {
+				e.preventDefault();
+				navigateTo(currentElement.href);
+				break;
+			}
+
+			currentElement = currentElement.parentNode;
 		}
 	});
 
