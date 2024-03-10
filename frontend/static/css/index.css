@@ -10,13 +10,13 @@ main {
 
 @media (max-width: 992px) {
 	.navbar > .container {
-		padding-right: 132px;
+		padding-right: 140px;
 	}
 
 	.language-toggle__wrapper {
 		position: absolute !important;
 		top: 6px;
-		right: 0;
+		right: 12px;
 	}
 }
 

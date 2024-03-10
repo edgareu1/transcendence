@@ -1,5 +1,4 @@
-import Abstract from "./_Abstract.js";
-import LanguageToggle from "./LanguageToggle.js";
+import { Abstract, LanguageToggle } from "./index.js";
 
 export default class extends Abstract {
 	constructor(props) {

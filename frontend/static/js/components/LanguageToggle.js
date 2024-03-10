@@ -1,5 +1,5 @@
-import Abstract from "./_Abstract.js";
-import { LOCALES } from "../../variables.js"
+import { LOCALES } from "/static/variables.js";
+import { Abstract } from "./index.js";
 
 export default class extends Abstract {
 	constructor(props) {

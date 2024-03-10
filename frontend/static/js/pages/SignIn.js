@@ -1,4 +1,4 @@
-import Abstract from "../components/_Abstract.js";
+import { Abstract } from "/static/js/components/index.js";
 
 export default class extends Abstract {
 	constructor(props) {
