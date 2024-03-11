@@ -28,6 +28,11 @@ export default class extends Abstract {
 								</a>
 							</li>
 							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="/pong" data-link>
+									${i18next.t('navbar.pong')}
+								</a>
+							</li>
+							<li class="nav-item">
 								<a class="nav-link active" aria-current="page" href="/dashboard" data-link>
 									${i18next.t('navbar.dashboard')}
 								</a>
