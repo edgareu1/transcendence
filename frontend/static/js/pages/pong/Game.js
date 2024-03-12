@@ -16,6 +16,7 @@ export default class Game {
 		this.startBtn = document.querySelector('#start-btn');
 		this.pauseBtn = document.querySelector('#pause-btn');
 		this.restartBtn = document.querySelector('#restart-btn');
+		this.modal = $("#message-modal");
 		this.closeMOdalBtn = document.querySelector('#message-modal-close');
 
 		this.ballRadius = 8;
@@ -59,7 +60,10 @@ export default class Game {
 
 		this.restartBtn.addEventListener("click", () => this.restart());
 		
-		this.closeMOdalBtn.addEventListener("click", () => this.restart());
+		this.closeMOdalBtn.addEventListener("click", () => {
+			this.modal.modal('hide');
+			this.restart();
+		});
 	}
 
 
@@ -180,8 +184,8 @@ export default class Game {
 	}
 
 	endGame(winner) {
-		// document.querySelector("#message").innerHTML = "Congratulations! " + winner + " wins!";
-		// document.querySelector("#message-modal").style.display = "block";
+		this.modal.find('#message').text("Congratulations! " + winner + " wins!");
+		this.modal.modal('show');
 		this.isGameOn = false;
 		this.restart();
 	}
@@ -208,7 +212,7 @@ export default class Game {
 		// info	
 		this.ctx.font = "14px helvetica";
 		this.ctx.fillText(this.leftPlayer.username + " - " + this.leftPlayer.score, 120, 20);
-		this.ctx.fillText(this.rightPlayer.score + " - " + this.rightPlayer.username, 420, 20); 
+		this.ctx.fillText(this.rightPlayer.score + " - " + this.rightPlayer.username, 420, 20);
 	}
 
 	loop() {
