@@ -2,9 +2,10 @@ import { User } from "/static/js/pages/pong/index.js";
 
 export default class Game {
 	constructor(player1, player2) {
+	
 
 		// Getting canvas context
-		this.canvas = document.querySelector("canvas");
+		this.canvas = document.querySelector("#canvas");
 		this.ctx = this.canvas.getContext("2d");
 		this.leftPlayer = new User(player1);
 		this.rightPlayer = new User(player2);
@@ -40,32 +41,24 @@ export default class Game {
 		this.sPressed = false;
 
 		// Listening events on buttons
-		this.startBtn.addEventListener("click", (event) => {
-			this.start();
-		});
+		this.startBtn.addEventListener("click", () => this.start());
 
-		this.pauseBtn.addEventListener("click", function() {
+		this.pauseBtn.addEventListener("click", () => {
 			if (this.isGameOn && !this.isGamePaused) {
 				this.isGamePaused = true;
-				this.pauseBtn.innerHTML = "Continue";
+				this.innerHTML = "Continue";
 				cancelAnimationFrame(this.animation);
 			} else if (this.isGamePaused) {
-				this.pauseBtn.innerHTML = "Pause";
+				this.innerHTML = "Pause";
 				this.isGameOn = false;
 				this.isGamePaused = false;
 				this.start();
 			}
 		});
 
-		this.restartBtn.addEventListener("click", function() {
-			this.restart();
-		});
+		this.restartBtn.addEventListener("click", () => this.restart());
 		
-		this.closeMOdalBtn.addEventListener("click", function() {
-			this.restart();
-		});
-
-		
+		this.closeMOdalBtn.addEventListener("click", () => this.restart());
 	}
 
 
@@ -74,8 +67,8 @@ export default class Game {
 	start() {
 		if(!this.isGameOn) {
 			// Listening for keyboard events
-			document.addEventListener("keydown", this.keyDownHandler);
-			document.addEventListener("keyup", this.keyUpHandler);
+			document.addEventListener("keydown", (e) => this.keyDownHandler(e));
+			document.addEventListener("keyup", (e) => this.keyUpHandler(e));
 			this.isGameOn = true;
 			this.loop();
 		}
@@ -89,9 +82,9 @@ export default class Game {
 		this.rightPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.leftPlayer.score = 0;
 		this.rightPlayer.score = 0;
-		// Listening for keyboard events
-		document.removeEventListener("keydown", this.keyDownHandler);
-		document.removeEventListener("keyup", this.keyUpHandler);
+		// Removing listener for keyboard events
+		document.removeEventListener("keydown", (e) => this.keyDownHandler(e));
+		document.removeEventListener("keyup", (e) => this.keyUpHandler(e));
 		this.isGameOn = false;
 		this.isGamePaused = false;
 		this.draw();
@@ -191,8 +184,8 @@ export default class Game {
 	endGame(winner) {
 		document.querySelector("#message").innerHTML = "Congratulations! " + winner + " wins!";
 		document.querySelector("#message-modal").style.display = "block";
-		document.removeEventListener("keydown", this.keyDownHandler);
-		document.removeEventListener("keyup", this.keyUpHandler);
+		document.removeEventListener("keydown", (e) => this.keyDownHandler(e));
+		document.removeEventListener("keyup", (e) => this.keyUpHandler(e));
 		this.isGameOn = false;
 		this.reset();
 	}
@@ -225,7 +218,7 @@ export default class Game {
 	loop() {
 		this.update();
 		this.draw();
-		this.animation = requestAnimationFrame(this.loop());
+		this.animation = requestAnimationFrame(() => this.loop());
 	}
 	
 }
