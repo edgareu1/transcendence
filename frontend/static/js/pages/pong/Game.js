@@ -65,9 +65,7 @@ export default class Game {
 			this.restart();
 		});
 
-		// Listening for keyboard events
-		document.addEventListener("keydown", this.keyDownHandler);
-		document.addEventListener("keyup", this.keyUpHandler);
+		
 	}
 
 
@@ -75,6 +73,9 @@ export default class Game {
 
 	start() {
 		if(!this.isGameOn) {
+			// Listening for keyboard events
+			document.addEventListener("keydown", this.keyDownHandler);
+			document.addEventListener("keyup", this.keyUpHandler);
 			this.isGameOn = true;
 			this.loop();
 		}
@@ -88,6 +89,9 @@ export default class Game {
 		this.rightPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.leftPlayer.score = 0;
 		this.rightPlayer.score = 0;
+		// Listening for keyboard events
+		document.removeEventListener("keydown", this.keyDownHandler);
+		document.removeEventListener("keyup", this.keyUpHandler);
 		this.isGameOn = false;
 		this.isGamePaused = false;
 		this.draw();
@@ -187,13 +191,16 @@ export default class Game {
 	endGame(winner) {
 		document.querySelector("#message").innerHTML = "Congratulations! " + winner + " wins!";
 		document.querySelector("#message-modal").style.display = "block";
+		document.removeEventListener("keydown", this.keyDownHandler);
+		document.removeEventListener("keyup", this.keyUpHandler);
+		this.isGameOn = false;
 		this.reset();
 	}
 
 	draw() {
 
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-		this.ctx.fillStyle = "#FFF";
+		this.ctx.fillStyle = "#BDBDBD";
 	
 		//paddles
 		this.ctx.fillRect(0, this.leftPaddleY, this.paddleWidth, this.paddleHeight);

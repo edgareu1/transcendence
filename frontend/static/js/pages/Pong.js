@@ -30,9 +30,9 @@ export default class  extends Abstract {
 				<canvas id="canvas" width="600" height="400" class="bg-dark"></canvas>
 			</div>
 			<div class="buttons d-flex justify-content-around mt-2">
-				<button id="start-btn" type="button" class="btn btn-light w-25 m-1 shadow text-secondary">Start</button>
-				<button id="pause-btn" type="button" class="btn btn-light  w-25 m-1 shadow text-secondary">Pause</button>
-				<button id="restart-btn" type="button" class="btn btn-light w-25 m-1 shadow text-secondary">Restart</button>
+				<button id="start-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">Start</button>
+				<button id="pause-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">Pause</button>
+				<button id="restart-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">Restart</button>
 			</div>
 		</div>
 

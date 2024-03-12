@@ -5,6 +5,7 @@ export default class User {
 		this.games = [];
 	}
 
+	// here we will create logic to sed database
 	storeGames(id, result, opponent) {
 		let game = {
 			id: id,
