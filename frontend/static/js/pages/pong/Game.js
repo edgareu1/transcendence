@@ -9,7 +9,8 @@ export default class Game {
 		this.ctx = this.canvas.getContext("2d");
 		this.canvasArea = document.querySelector("#pong");
 		this.leftPlayer = new User(player1);
-		this.rightPlayer = new User(player2);
+		this.rightPlayer = player2 !== null ? new User(player2) : new User("Zaphod Beeblebrox");
+		this.singleMode = player2 === null ? true : false;
 		this.animation;
 
 		// Getting elements references on DOM
@@ -30,6 +31,7 @@ export default class Game {
 		this.leftPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.rightPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.paddleSpeed = 10;
+		this.serverPaddleSpeed;
 
 		this.maxScore = 5;
 
@@ -71,6 +73,9 @@ export default class Game {
 
 	start() {
 		if(!this.isGameOn) {
+			if (this.singleMode) {
+				this.serverPaddleSpeed = Math.random() * 3;
+			}
 			this.canvasArea.addEventListener("keydown", (e) => this.keyDownHandler(e));
 			this.canvasArea.addEventListener("keyup", (e) => this.keyUpHandler(e));
 			this.isGameOn = true;
@@ -96,13 +101,17 @@ export default class Game {
 		this.ballY = this.canvas.height / 2;
 		this.ballSpeedX = -this.ballSpeedX;
 		this.ballSpeedY = Math.random() * 10 -5;
+		if (this.singleMode) {
+			this.serverPaddleSpeed = Math.random() * 3;
+			console.log(this.serverPaddleSpeed);
+		}
 	}
 
 	keyDownHandler(e) {
 		e.preventDefault();
-		if (e.key === "ArrowUp") {
+		if (e.key === "ArrowUp" && !this.singleMode) {
 			this.upPressed = true;
-		} else if (e.key === "ArrowDown") {
+		} else if (e.key === "ArrowDown" && !this.singleMode) {
 			this.downPressed = true;
 		} else if (e.key === "w") {
 			this.wPressed = true;
@@ -113,9 +122,9 @@ export default class Game {
 
 	keyUpHandler(e) {
 		e.preventDefault();
-		if (e.key === "ArrowUp") {
+		if (e.key === "ArrowUp" && !this.singleMode) {
 			this.upPressed = false;
-		} else if (e.key === "ArrowDown") {
+		} else if (e.key === "ArrowDown" && !this.singleMode) {
 			this.downPressed = false;
 		} else if (e.key === "w") {
 			this.wPressed = false;
@@ -131,12 +140,21 @@ export default class Game {
 		} else if (this.sPressed && this.leftPaddleY + this.paddleHeight < this.canvas.height) {
 			this.leftPaddleY += this.paddleSpeed;
 		}
-	
-		// move right paddle
-		if (this.upPressed && this.rightPaddleY > 0) {
-			this.rightPaddleY -= this.paddleSpeed;
-		} else if (this.downPressed && this.rightPaddleY + this.paddleHeight < this.canvas.height) {
-			this.rightPaddleY += this.paddleSpeed;
+		
+		if (this.singleMode) {
+			// machine logic
+			if (this.ballY > this.rightPaddleY + this.paddleHeight / 2 && this.rightPaddleY + this.paddleHeight < this.canvas.height) {
+				this.rightPaddleY += this.serverPaddleSpeed;
+			} else if (this.ballY < this.rightPaddleY + this.paddleHeight / 2 && this.rightPaddleY > 0) {
+				this.rightPaddleY -= this.serverPaddleSpeed;
+			}
+		} else {
+			// move right paddle
+			if (this.upPressed && this.rightPaddleY > 0) {
+				this.rightPaddleY -= this.paddleSpeed;
+			} else if (this.downPressed && this.rightPaddleY + this.paddleHeight < this.canvas.height) {
+				this.rightPaddleY += this.paddleSpeed;
+			}
 		}
 	
 		// move ball
@@ -168,7 +186,9 @@ export default class Game {
 		}
 	
 		if (this.rightPlayer.score == this.maxScore) {
-			this.storeResult(this.rightPlayer, this.leftPlayer);
+			if (!this.singleMode) {
+				this.storeResult(this.rightPlayer, this.leftPlayer);
+			}
 			this.endGame(this.rightPlayer.username);
 		} else if (this.leftPlayer.score == this.maxScore) {
 			this.storeResult(this.leftPlayer, this.rightPlayer);
@@ -215,8 +235,10 @@ export default class Game {
 	
 		// scoreboard	
 		this.ctx.font = "14px helvetica";
-		this.ctx.fillText(this.leftPlayer.username + " - " + this.leftPlayer.score, 120, 20);
-		this.ctx.fillText(this.rightPlayer.score + " - " + this.rightPlayer.username, 420, 20);
+		this.ctx.textAlign = "center";
+		this.ctx.fillText(this.leftPlayer.username + " - " + this.leftPlayer.score, this.canvas.width / 4, 20);
+		this.ctx.textAlign = "center";
+		this.ctx.fillText(this.rightPlayer.score + " - " + this.rightPlayer.username, 3 * this.canvas.width / 4, 20);
 	}
 
 	loop() {
