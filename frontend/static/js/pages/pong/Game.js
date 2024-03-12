@@ -67,11 +67,10 @@ export default class Game {
 	}
 
 
-	static id = 0;
+	static id = 1;
 
 	start() {
 		if(!this.isGameOn) {
-			// Listening for keyboard events
 			this.canvasArea.addEventListener("keydown", (e) => this.keyDownHandler(e));
 			this.canvasArea.addEventListener("keyup", (e) => this.keyUpHandler(e));
 			this.isGameOn = true;
@@ -179,15 +178,20 @@ export default class Game {
 	}
 
 	storeResult(winner, looser) {
-		winner.storeGames(this.id, "win", looser.username);
-		looser.storeGames(this.id, "loose", winner.username);
+		winner.storeGames(parseInt(Game.id), "win", looser.username, this.leftPlayer.score, this.rightPlayer.score);
+		looser.storeGames(parseInt(Game.id), "loose", winner.username, this.leftPlayer.score, this.rightPlayer.score);
+		// only for test
+		// winner.printGames();
+		// looser.printGames();
+		// winner.printScores();
+		// looser.printScores();
 	}
 
 	endGame(winner) {
 		this.modal.find('#message').text("Congratulations! " + winner + " wins!");
 		this.modal.modal('show');
 		this.isGameOn = false;
-		this.restart();
+		Game.id++;
 	}
 
 	draw() {
@@ -209,7 +213,7 @@ export default class Game {
 		this.ctx.arc(this.ballX, this.ballY, this.ballRadius, 0, Math.PI * 2);
 		this.ctx.fill();
 	
-		// info	
+		// scoreboard	
 		this.ctx.font = "14px helvetica";
 		this.ctx.fillText(this.leftPlayer.username + " - " + this.leftPlayer.score, 120, 20);
 		this.ctx.fillText(this.rightPlayer.score + " - " + this.rightPlayer.username, 420, 20);
