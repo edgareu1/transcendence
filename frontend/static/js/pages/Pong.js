@@ -25,7 +25,7 @@ export default class  extends Abstract {
 		<h1 class="mb-4">
 				${i18next.t('pong.title')}
 			</h1>
-		<div class="game d-flex flex-column align-items-center m-4">
+		<div id="pong" tabindex="1" class="d-flex flex-column align-items-center m-4">
 			<div class="d-flex flex-column align-items-center">
 				<canvas id="canvas" width="600" height="400" class="bg-dark"></canvas>
 			</div>

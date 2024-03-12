@@ -7,6 +7,7 @@ export default class Game {
 		// Getting canvas context
 		this.canvas = document.querySelector("#canvas");
 		this.ctx = this.canvas.getContext("2d");
+		this.canvasArea = document.querySelector("#pong");
 		this.leftPlayer = new User(player1);
 		this.rightPlayer = new User(player2);
 		this.animation;
@@ -67,8 +68,8 @@ export default class Game {
 	start() {
 		if(!this.isGameOn) {
 			// Listening for keyboard events
-			document.addEventListener("keydown", (e) => this.keyDownHandler(e));
-			document.addEventListener("keyup", (e) => this.keyUpHandler(e));
+			this.canvasArea.addEventListener("keydown", (e) => this.keyDownHandler(e));
+			this.canvasArea.addEventListener("keyup", (e) => this.keyUpHandler(e));
 			this.isGameOn = true;
 			this.loop();
 		}
@@ -82,9 +83,6 @@ export default class Game {
 		this.rightPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.leftPlayer.score = 0;
 		this.rightPlayer.score = 0;
-		// Removing listener for keyboard events
-		document.removeEventListener("keydown", (e) => this.keyDownHandler(e));
-		document.removeEventListener("keyup", (e) => this.keyUpHandler(e));
 		this.isGameOn = false;
 		this.isGamePaused = false;
 		this.draw();
@@ -182,12 +180,10 @@ export default class Game {
 	}
 
 	endGame(winner) {
-		document.querySelector("#message").innerHTML = "Congratulations! " + winner + " wins!";
-		document.querySelector("#message-modal").style.display = "block";
-		document.removeEventListener("keydown", (e) => this.keyDownHandler(e));
-		document.removeEventListener("keyup", (e) => this.keyUpHandler(e));
+		// document.querySelector("#message").innerHTML = "Congratulations! " + winner + " wins!";
+		// document.querySelector("#message-modal").style.display = "block";
 		this.isGameOn = false;
-		this.reset();
+		this.restart();
 	}
 
 	draw() {
@@ -216,9 +212,11 @@ export default class Game {
 	}
 
 	loop() {
-		this.update();
-		this.draw();
-		this.animation = requestAnimationFrame(() => this.loop());
+		if (this.isGameOn) {
+			this.update();
+			this.draw();
+			this.animation = requestAnimationFrame(() => this.loop());
+		}
 	}
 	
 }
