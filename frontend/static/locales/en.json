@@ -2,6 +2,8 @@
 	"navbar": {
 		"home": "Home",
 		"dashboard": "Dashboard",
+		"individualDashboard": "Individual Dashboard",
+		"generalDashboard": "General Dashboard",
 		"userManagement": "User Management",
 		"signUp": "Sign-up",
 		"signIn": "Sign-in",
@@ -10,8 +12,11 @@
 	"pong": {
 		"title": "Pong"
 	},
-	"dashboard": {
-		"title": "Dashboard"
+	"individualDashboard": {
+		"title": "Individual Dashboard"
+	},
+	"generalDashboard": {
+		"title": "General Dashboard"
 	},
 	"home": {
 		"title": "Home"

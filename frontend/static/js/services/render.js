@@ -1,12 +1,13 @@
 import { Navbar } from "/static/js/components/index.js";
-import { Dashboard, Home, SignIn, SignUp, Pong } from "/static/js/pages/index.js";
+import { GeneralDashboard, IndividualDashboard, Home, SignIn, SignUp, Pong } from "/static/js/pages/index.js";
 
 const ROUTES = [
 	{ path: "/", title: "Home", page: Home },
 	{ path: "/pong", title: "Pong", page: Pong },
 	{ path: "/sign-up", title: "Sign-up", page: SignUp },
 	{ path: "/sign-in", title: "Sign-in", page: SignIn },
-	{ path: "/dashboard", title: "Dashboard", page: Dashboard }
+	{ path: "/dashboard/general", title: "General statistics", page: GeneralDashboard },
+	{ path: "/dashboard/individual", title: "Individual statistics", page: IndividualDashboard }
 ];
 
 const doesPathMatch = (path) => {

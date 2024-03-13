@@ -14,7 +14,7 @@ export default class extends Abstract {
 	async getHtml() {
 		return `
 			<h1>
-				${i18next.t('dashboard.title')}
+				${i18next.t('individualDashboard.title')}
 			</h1>
 			<div class="dashboard">
 				<table class="table table-hover text-center">
@@ -23,6 +23,7 @@ export default class extends Abstract {
 							<th scope="col">Game id</th>
 							<th scope="col">Victory</th>
 							<th scope="col">Defeat</th>
+							<th scope="col">Opponent</th>
 							<th scope="col">Points</th>
 							<th scope="col">Total Points</th>
 						</tr>
@@ -32,6 +33,7 @@ export default class extends Abstract {
 							<th scope="row">1</th>
 							<td>x</td>
 							<td></td>
+							<td>tpereira</td>
 							<td>5</td>
 							<td>5</td>
 						</tr>
@@ -39,6 +41,7 @@ export default class extends Abstract {
 							<th scope="row">2</th>
 							<td></td>
 							<td>x</td>
+							<td>efreire-</td>
 							<td>3</td>
 							<td>8</td>
 						</tr>
@@ -46,6 +49,7 @@ export default class extends Abstract {
 							<th scope="row">3</th>
 							<td></td>
 							<td>x</td>
+							<td>tpereira</td>
 							<td>2</td>
 							<td>10</td>
 						</tr>

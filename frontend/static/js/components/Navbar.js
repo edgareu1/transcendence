@@ -32,10 +32,22 @@ export default class extends Abstract {
 									${i18next.t('navbar.pong')}
 								</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="/dashboard" data-link>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									${i18next.t('navbar.dashboard')}
 								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="/dashboard/individual" data-link>
+											${i18next.t('navbar.individualDashboard')}
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="/dashboard/general" data-link>
+											${i18next.t('navbar.generalDashboard')}
+										</a>
+									</li>
+								</ul>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
