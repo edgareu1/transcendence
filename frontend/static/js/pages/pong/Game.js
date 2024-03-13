@@ -16,7 +16,7 @@ export default class Game {
 		this.startBtn = document.querySelector('#start-btn');
 		this.pauseBtn = document.querySelector('#pause-btn');
 		this.restartBtn = document.querySelector('#restart-btn');
-		this.modal = $("#message-modal");
+		this.modal = document.querySelector('#message-modal');
 		this.closeMOdalBtn = document.querySelector('#message-modal-close');
 
 		this.ballRadius = 8;
@@ -61,7 +61,8 @@ export default class Game {
 		this.restartBtn.addEventListener("click", () => this.restart());
 		
 		this.closeMOdalBtn.addEventListener("click", () => {
-			this.modal.modal('hide');
+			this.modal.style.display = "none";
+			this.modal.className = "modal fade";
 			this.restart();
 		});
 	}
@@ -190,8 +191,10 @@ export default class Game {
 	}
 
 	endGame(winner) {
-		this.modal.find('#message').text("Congratulations! " + winner + " wins!");
-		this.modal.modal('show');
+
+		document.querySelector("#message").innerHTML = "Congratulations! " + winner + " wins!";
+		this.modal.style.display = "block";
+		this.modal.className = "modal fade show";
 		this.isGameOn = false;
 		Game.id++;
 	}
