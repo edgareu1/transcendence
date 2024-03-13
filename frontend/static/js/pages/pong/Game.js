@@ -9,8 +9,7 @@ export default class Game {
 		this.ctx = this.canvas.getContext("2d");
 		this.canvasArea = document.querySelector("#pong");
 		this.leftPlayer = new User(player1);
-		this.rightPlayer = player2 !== null ? new User(player2) : new User("Zaphod Beeblebrox");
-		this.singleMode = player2 === null ? true : false;
+		this.rightPlayer = new User(player2);
 		this.animation;
 
 		// Getting elements references on DOM
@@ -31,7 +30,6 @@ export default class Game {
 		this.leftPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.rightPaddleY = this.canvas.height / 2 - this.paddleHeight / 2;
 		this.paddleSpeed = 10;
-		this.serverPaddleSpeed;
 
 		this.maxScore = 5;
 
@@ -73,9 +71,6 @@ export default class Game {
 
 	start() {
 		if(!this.isGameOn) {
-			if (this.singleMode) {
-				this.serverPaddleSpeed = Math.random() * 3;
-			}
 			this.canvasArea.addEventListener("keydown", (e) => this.keyDownHandler(e));
 			this.canvasArea.addEventListener("keyup", (e) => this.keyUpHandler(e));
 			this.isGameOn = true;
@@ -101,17 +96,13 @@ export default class Game {
 		this.ballY = this.canvas.height / 2;
 		this.ballSpeedX = -this.ballSpeedX;
 		this.ballSpeedY = Math.random() * 10 -5;
-		if (this.singleMode) {
-			this.serverPaddleSpeed = Math.random() * 3;
-			console.log(this.serverPaddleSpeed);
-		}
 	}
 
 	keyDownHandler(e) {
 		e.preventDefault();
-		if (e.key === "ArrowUp" && !this.singleMode) {
+		if (e.key === "ArrowUp") {
 			this.upPressed = true;
-		} else if (e.key === "ArrowDown" && !this.singleMode) {
+		} else if (e.key === "ArrowDown") {
 			this.downPressed = true;
 		} else if (e.key === "w") {
 			this.wPressed = true;
@@ -122,9 +113,9 @@ export default class Game {
 
 	keyUpHandler(e) {
 		e.preventDefault();
-		if (e.key === "ArrowUp" && !this.singleMode) {
+		if (e.key === "ArrowUp") {
 			this.upPressed = false;
-		} else if (e.key === "ArrowDown" && !this.singleMode) {
+		} else if (e.key === "ArrowDown") {
 			this.downPressed = false;
 		} else if (e.key === "w") {
 			this.wPressed = false;
@@ -141,22 +132,13 @@ export default class Game {
 			this.leftPaddleY += this.paddleSpeed;
 		}
 		
-		if (this.singleMode) {
-			// machine logic
-			if (this.ballY > this.rightPaddleY + this.paddleHeight / 2 && this.rightPaddleY + this.paddleHeight < this.canvas.height) {
-				this.rightPaddleY += this.serverPaddleSpeed;
-			} else if (this.ballY < this.rightPaddleY + this.paddleHeight / 2 && this.rightPaddleY > 0) {
-				this.rightPaddleY -= this.serverPaddleSpeed;
-			}
-		} else {
-			// move right paddle
-			if (this.upPressed && this.rightPaddleY > 0) {
-				this.rightPaddleY -= this.paddleSpeed;
-			} else if (this.downPressed && this.rightPaddleY + this.paddleHeight < this.canvas.height) {
-				this.rightPaddleY += this.paddleSpeed;
-			}
+		// move right paddle
+		if (this.upPressed && this.rightPaddleY > 0) {
+			this.rightPaddleY -= this.paddleSpeed;
+		} else if (this.downPressed && this.rightPaddleY + this.paddleHeight < this.canvas.height) {
+			this.rightPaddleY += this.paddleSpeed;
 		}
-	
+		
 		// move ball
 		this.ballX += this.ballSpeedX;
 		this.ballY += this.ballSpeedY;
@@ -198,8 +180,8 @@ export default class Game {
 	}
 
 	storeResult(winner, looser) {
-		winner.storeGames(parseInt(Game.id), "win", looser.username, this.leftPlayer.score, this.rightPlayer.score);
-		looser.storeGames(parseInt(Game.id), "loose", winner.username, this.leftPlayer.score, this.rightPlayer.score);
+		winner.storeGames(Game.id, "win", looser.username, this.leftPlayer.score, this.rightPlayer.score);
+		looser.storeGames(Game.id, "loose", winner.username, this.leftPlayer.score, this.rightPlayer.score);
 		// only for test
 		// winner.printGames();
 		// looser.printGames();
