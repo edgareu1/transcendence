@@ -10,13 +10,31 @@
 		"pong": "Pong"
 	},
 	"pong": {
-		"title": "Pong"
+		"title": "Pong",
+		"buttons": {
+			"start": "Start",
+			"pause": "Pause",
+			"continue": "Continue",
+			"restart": "Restart"
+		}
 	},
 	"individualDashboard": {
-		"title": "Individual Dashboard"
+		"title": "Individual Dashboard",
+		"columns": {
+			"id": "Match",
+			"victory": "Victory",
+			"defeat": "Defeat",
+			"opponent": "Opponent",
+			"points": "Points",
+			"total": "Total Points"
+		}
 	},
 	"generalDashboard": {
-		"title": "General Dashboard"
+		"title": "General Dashboard",
+		"columns": {
+			"id": "Match",
+			"players": "Players"
+		}
 	},
 	"home": {
 		"title": "Home"

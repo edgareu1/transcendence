@@ -48,6 +48,7 @@ export default class Game {
 		this.pauseBtn.addEventListener("click", () => {
 			if (this.isGameOn && !this.isGamePaused) {
 				this.isGamePaused = true;
+				// todo: fix dynamic language
 				this.innerHTML = "Continue";
 				cancelAnimationFrame(this.animation);
 			} else if (this.isGamePaused) {

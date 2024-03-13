@@ -20,12 +20,12 @@ export default class extends Abstract {
 				<table class="table table-hover text-center">
 					<thead class="table-secondary">
 						<tr>
-							<th scope="col">Game id</th>
-							<th scope="col">Victory</th>
-							<th scope="col">Defeat</th>
-							<th scope="col">Opponent</th>
-							<th scope="col">Points</th>
-							<th scope="col">Total Points</th>
+							<th scope="col">${i18next.t('individualDashboard.columns.id')}</th>
+							<th scope="col">${i18next.t('individualDashboard.columns.victory')}</th>
+							<th scope="col">${i18next.t('individualDashboard.columns.defeat')}</th>
+							<th scope="col">${i18next.t('individualDashboard.columns.opponent')}</th>
+							<th scope="col">${i18next.t('individualDashboard.columns.points')}</th>
+							<th scope="col">${i18next.t('individualDashboard.columns.total')}</th>
 						</tr>
 					</thead>
 					<tbody class="table-group-divider" style="border-top-color: #6c757d">

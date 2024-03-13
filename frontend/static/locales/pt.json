@@ -1,58 +1,76 @@
 {
 	"navbar": {
 		"home": "Home (PT)",
-		"dashboard": "Dashboard (PT)",
-		"individualDashboard": "Individual Dashboard (PT)",
-		"generalDashboard": "General Dashboard (PT)",
-		"userManagement": "User Management (PT)",
-		"signUp": "Sign-up (PT)",
-		"signIn": "Sign-in (PT)",
-		"pong": "Pong (PT)"
+		"dashboard": "Painel estatístico",
+		"individualDashboard": "Painel Individual",
+		"generalDashboard": "Painel Geral",
+		"userManagement": "Gestão de usuários",
+		"signUp": "Inscrever-se",
+		"signIn": "Iniciar",
+		"pong": "Pong"
 	},
 	"pong": {
-		"title": "Pong (PT)"
+		"title": "Pong",
+		"buttons": {
+			"start": "Iniciar",
+			"pause": "Pausar",
+			"continue": "Continuar",
+			"restart": "Reiniciar"
+		}
 	},
 	"individualDashboard": {
-		"title": "Individual Dashboard (PT)"
+		"title": "Painel Individual",
+		"columns": {
+			"id": "Partida",
+			"victory": "Vitória",
+			"defeat": "Derrota",
+			"opponent": "Adversário",
+			"points": "Pontos",
+			"total": "Total de Pontos"
+		}
 	},
 	"generalDashboard": {
-		"title": "General Dashboard (PT)"
+		"title": "Painel Geral",
+		"columns": {
+			"id": "Partida",
+			"players": "Jogadores"
+		}
 	},
 	"home": {
 		"title": "Home (PT)"
 	},
 	"signIn": {
-		"title": "Sign-in (PT)",
+		"title": "Iniciar",
 		"fields": {
 			"email": {
-				"label": "Email address (PT)",
-				"invalidFeedback": "Please choose a valid email. (PT)"
+				"label": "Email",
+				"invalidFeedback": "Por favor escolha um endereço de email válido."
 			},
 			"password": {
-				"label": "Password (PT)",
-				"invalidFeedback": "Please choose a valid password. (PT)"
+				"label": "Senha",
+				"invalidFeedback": "Por favor escolha uma senha válida."
 			}
 		},
-		"submitButton": "Submit (PT)"
+		"submitButton": "Enviar"
 	},
 	"signUp": {
-		"title": "Sign-up (PT)",
+		"title": "Inscrever-se",
 		"fields": {
 			"email": {
-				"label": "Email address (PT)",
-				"invalidFeedback": "Please choose a valid email. (PT)",
-				"help": "We'll never share your email with anyone else. (PT)"
+				"label": "Email",
+				"invalidFeedback": "Por favor escolha um endereço de email válido.",
+				"help": "Nós nunca iremos partilhar seu email com ninguém."
 			},
 			"username": {
-				"label": "Username (PT)",
-				"invalidFeedback": "Please choose a valid username. (PT)",
-				"help": "How the other players will see you (PT)"
+				"label": "Nome de usuário",
+				"invalidFeedback": "Por favor escolha um nome de usuário válido.",
+				"help": "Como os outros jogadores vão vê-lo."
 			},
 			"password": {
-				"label": "Password (PT)",
-				"invalidFeedback": "Please choose a valid password. (PT)"
+				"label": "Senha",
+				"invalidFeedback": "Por favor escolha uma senha válida."
 			}
 		},
-		"submitButton": "Submit (PT)"
+		"submitButton": "Enviar"
 	}
 }

@@ -1,58 +1,76 @@
 {
 	"navbar": {
-		"home": "Home (ES)",
-		"dashboard": "Dashboard (ES)",
-		"individualDashboard": "Individual Dashboard (ES)",
-		"generalDashboard": "General Dashboard (ES)",
-		"userManagement": "User Management (ES)",
-		"signUp": "Sign-up (ES)",
-		"signIn": "Sign-in (ES)",
-		"pong": "Pong (ES)"
+		"home": "Inicio",
+		"dashboard": "Tablero",
+		"individualDashboard": "Tablero Individual",
+		"generalDashboard": "Tablero General",
+		"userManagement": "Gestión de Usuarios",
+		"signUp": "Inscribirse",
+		"signIn": "Iniciar Sesión",
+		"pong": "Pong"
 	},
 	"pong": {
-		"title": "Pong (ES)"
+		"title": "Pong",
+		"buttons": {
+			"start": "Iniciar",
+			"pause": "Pausar",
+			"continue": "Continuar",
+			"restart": "Reiniciar"
+		}
 	},
 	"individualDashboard": {
-		"title": "Individual Dashboard (ES)"
+		"title": "Tablero Individual",
+		"columns": {
+			"id": "Juego",
+			"victory": "Victoria",
+			"defeat": "Derrota",
+			"opponent": "Adversario",
+			"points": "Puntos",
+			"total": "Puntos Totales"
+		}
 	},
 	"generalDashboard": {
-		"title": "General Dashboard (ES)"
+		"title": "Tablero General",
+		"columns": {
+			"id": "Juego",
+			"players": "Jugadores"
+		}
 	},
 	"home": {
-		"title": "Home (ES)"
+		"title": "Inicio"
 	},
 	"signIn": {
-		"title": "Sign-in (ES)",
+		"title": "Iniciar Sesión",
 		"fields": {
 			"email": {
-				"label": "Email address (ES)",
-				"invalidFeedback": "Please choose a valid email. (ES)"
+				"label": "Correo electrónico",
+				"invalidFeedback": "Por favor elija un correo electrónico válido."
 			},
 			"password": {
-				"label": "Password (ES)",
-				"invalidFeedback": "Please choose a valid password. (ES)"
+				"label": "Contraseña",
+				"invalidFeedback": "Por favor elija una contraseña válida."
 			}
 		},
-		"submitButton": "Submit (ES)"
+		"submitButton": "Enviar"
 	},
 	"signUp": {
-		"title": "Sign-up (ES)",
+		"title": "Inscribirse",
 		"fields": {
 			"email": {
-				"label": "Email address (ES)",
-				"invalidFeedback": "Please choose a valid email. (ES)",
-				"help": "We'll never share your email with anyone else. (ES)"
+				"label": "Correo electrónico",
+				"invalidFeedback": "Por favor elija un correo electrónico válido.",
+				"help": "Nunca compartiremos su correo electrónico con nadie más."
 			},
 			"username": {
-				"label": "Username (ES)",
-				"invalidFeedback": "Please choose a valid username. (ES)",
-				"help": "How the other players will see you (ES)"
+				"label": "Nombre de usuario",
+				"invalidFeedback": "Por favor elija un nombre de usuario válido.",
+				"help": "Cómo te verán los otros jugadores."
 			},
 			"password": {
-				"label": "Password (ES)",
-				"invalidFeedback": "Please choose a valid password. (ES)"
+				"label": "Contraseña",
+				"invalidFeedback": "Por favor elija una contraseña válida."
 			}
 		},
-		"submitButton": "Submit (ES)"
+		"submitButton": "Enviar"
 	}
 }

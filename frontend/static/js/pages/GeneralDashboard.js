@@ -20,8 +20,8 @@ export default class extends Abstract {
 				<table class="table text-center">
 					<thead class="table-secondary">
 						<tr>
-							<th scope="col">Game id</th>
-							<th scope="col" colspan="2">Players</th>
+							<th scope="col">${i18next.t('generalDashboard.columns.id')}</th>
+							<th scope="col" colspan="2">${i18next.t('generalDashboard.columns.players')}</th>
 						</tr>
 					</thead>
 					<tbody class="table-group-divider" style="border-top-color: #6c757d">
