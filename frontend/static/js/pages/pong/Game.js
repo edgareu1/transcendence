@@ -48,11 +48,10 @@ export default class Game {
 		this.pauseBtn.addEventListener("click", () => {
 			if (this.isGameOn && !this.isGamePaused) {
 				this.isGamePaused = true;
-				// todo: fix dynamic language
-				this.innerHTML = "Continue";
+				this.pauseBtn.innerHTML = i18next.t('pong.buttons.continue');
 				cancelAnimationFrame(this.animation);
 			} else if (this.isGamePaused) {
-				this.innerHTML = "Pause";
+				this.pauseBtn.innerHTML = i18next.t('pong.buttons.pause');
 				this.isGameOn = false;
 				this.isGamePaused = false;
 				this.start();
