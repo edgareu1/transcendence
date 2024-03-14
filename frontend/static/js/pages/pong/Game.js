@@ -2,7 +2,6 @@ import { User } from "/static/js/pages/pong/index.js";
 
 export default class Game {
 	constructor(player1, player2) {
-	
 
 		// Getting canvas context
 		this.canvas = document.querySelector("#canvas");
@@ -67,6 +66,7 @@ export default class Game {
 		});
 	}
 
+	static history = [];
 
 	static id = 1;
 
@@ -188,6 +188,17 @@ export default class Game {
 		// looser.printGames();
 		// winner.printScores();
 		// looser.printScores();
+
+		// this will be pushed to database
+		Game.history.push(
+			{
+				id: Game.id,
+				leftPlayer: this.leftPlayer.username,
+				rightPlayer: this.rightPlayer.username,
+				leftPts: this.leftPlayer.score,
+				rightPts: this.rightPlayer.score
+			}
+		);
 	}
 
 	endGame(winner) {

@@ -14,8 +14,6 @@ export default class  extends Abstract {
 
 		//it is hardcoded but should be properties being received by app management
 		let game = new Game("ansilva-", "tpereira");
-		// game.id++;
-
 		game.draw();
 
 	}
