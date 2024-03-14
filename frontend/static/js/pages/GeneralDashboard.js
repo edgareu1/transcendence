@@ -69,7 +69,7 @@ export default class extends Abstract {
 			<h1>
 				${i18next.t('generalDashboard.title')}
 			</h1>
-			<div class="dashboard" id="table-container">${this.generateTable()}</div>
+			<div class="dashboard">${this.generateTable()}</div>
 		`;
 	}
 }
