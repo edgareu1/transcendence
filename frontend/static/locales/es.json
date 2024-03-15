@@ -2,8 +2,8 @@
 	"navbar": {
 		"home": "Inicio",
 		"dashboard": "Tablero",
-		"individualDashboard": "Tablero Individual",
-		"generalDashboard": "Tablero General",
+		"individualDashboard": "Estadísticas Individuales",
+		"generalDashboard": "Estadísticas Generales",
 		"userManagement": "Gestión de Usuarios",
 		"signUp": "Inscribirse",
 		"signIn": "Iniciar Sesión",
@@ -19,7 +19,7 @@
 		}
 	},
 	"individualDashboard": {
-		"title": "Tablero Individual",
+		"title": "Estadísticas",
 		"columns": {
 			"id": "Juego",
 			"victory": "Victoria",

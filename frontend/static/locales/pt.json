@@ -1,9 +1,9 @@
 {
 	"navbar": {
 		"home": "Home (PT)",
-		"dashboard": "Painel estatístico",
-		"individualDashboard": "Painel Individual",
-		"generalDashboard": "Painel Geral",
+		"dashboard": "Painel",
+		"individualDashboard": "Estatísticas Individuais",
+		"generalDashboard": "Estatísticas Gerais",
 		"userManagement": "Gestão de usuários",
 		"signUp": "Inscrever-se",
 		"signIn": "Iniciar",
@@ -19,7 +19,7 @@
 		}
 	},
 	"individualDashboard": {
-		"title": "Painel Individual",
+		"title": "Estatísticas",
 		"columns": {
 			"id": "Partida",
 			"victory": "Vitória",

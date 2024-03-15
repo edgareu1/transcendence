@@ -2,8 +2,8 @@
 	"navbar": {
 		"home": "Home",
 		"dashboard": "Dashboard",
-		"individualDashboard": "Individual Dashboard",
-		"generalDashboard": "General Dashboard",
+		"individualDashboard": "Personal Statistics",
+		"generalDashboard": "General Statistics",
 		"userManagement": "User Management",
 		"signUp": "Sign-up",
 		"signIn": "Sign-in",
@@ -19,7 +19,7 @@
 		}
 	},
 	"individualDashboard": {
-		"title": "Individual Dashboard",
+		"title": "Statistics",
 		"columns": {
 			"id": "Match",
 			"victory": "Victory",

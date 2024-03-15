@@ -7,32 +7,35 @@ export default class extends Abstract {
 		this.params = props;
 
 		// this is mocking data from database
-		this.userData = [
-			{
-				id: 1,
-				victory: true,
-				defeat: false,
-				opponent: "Jeff",
-				points: 5,
-				totalPoints: 5
-			},
-			{
-				id: 2,
-				victory: false,
-				defeat: true,
-				opponent: "Will",
-				points: 3,
-				totalPoints: 8
-			},
-			{
-				id: 3,
-				victory: false,
-				defeat: true,
-				opponent: "John",
-				points: 2,
-				totalPoints: 10
-			}
-		];
+		this.userData = {
+			username: "Bob",
+			games: [
+				{
+					id: 1,
+					victory: true,
+					defeat: false,
+					opponent: "Jeff",
+					points: 5,
+					totalPoints: 5
+				},
+				{
+					id: 2,
+					victory: false,
+					defeat: true,
+					opponent: "Will",
+					points: 3,
+					totalPoints: 8
+				},
+				{
+					id: 3,
+					victory: false,
+					defeat: true,
+					opponent: "John",
+					points: 2,
+					totalPoints: 10
+				}
+			]
+		};
 	}
 
 	generateTable() {
@@ -49,7 +52,7 @@ export default class extends Abstract {
 						</thead>
 						<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
 
-		this.userData.forEach(data => {
+		this.userData.games.forEach(data => {
 			table += `<tr>
 							<th scope="row">${data.id}</th>
 							<td>${data.victory ? 'x' : ' '}</td>
@@ -70,7 +73,7 @@ export default class extends Abstract {
 	async getHtml() {
 		return `
 			<h1>
-				${i18next.t('individualDashboard.title')}
+				${i18next.t('individualDashboard.title')} - ${this.userData.username}
 			</h1>
 			<div class="dashboard">${this.generateTable()}</div>
 		`;
