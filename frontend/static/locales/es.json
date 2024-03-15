@@ -33,7 +33,8 @@
 		"title": "Tablero General",
 		"columns": {
 			"id": "Juego",
-			"players": "Jugadores"
+			"players": "Jugadores",
+			"points": "Puntos"
 		}
 	},
 	"home": {

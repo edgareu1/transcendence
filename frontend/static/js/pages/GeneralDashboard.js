@@ -31,19 +31,37 @@ export default class extends Abstract {
 			}
 		];
 
+		this.users = [
+			{
+				username: "Bob",
+				totalPoints: 10
+			},
+			{
+				username:"Jeff",
+				totalPoints: 3
+			},
+			{
+				username: "John",
+				totalPoints: 8
+			},
+			{
+				username: "Will",
+				totalPoints: 2
+			}
+		];
 		
 	}
 
-	generateTable() {
-
-		let table = '<table class="table text-center">';
-		table += `<thead class="table-secondary">
-						<tr>
-							<th scope="col">${i18next.t('generalDashboard.columns.id')}</th>
-							<th scope="col" colspan="2">${i18next.t('generalDashboard.columns.players')}</th>
-						</tr>
-					</thead>
-					<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
+	generateHistoryTable() {
+		
+		let table = `<table class="table text-center">
+						<thead class="table-secondary">
+							<tr>
+								<th scope="col">${i18next.t('generalDashboard.columns.id')}</th>
+								<th scope="col" colspan="2">${i18next.t('generalDashboard.columns.players')}</th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
 
 		this.games.forEach(game => {
 			table += `<tr>
@@ -59,6 +77,31 @@ export default class extends Abstract {
 		table += '</tbody></table>';
 		return table;
 	};
+
+	generateRankingTable() {
+		this.users.sort((a, b) => b.totalPoints - a.totalPoints);
+		
+		let table = `<table class="table text-center">
+						<thead class="table-secondary">
+							<tr>
+								<th scope="col">${i18next.t('generalDashboard.columns.players')}</th>
+								<th scope="col">${i18next.t('generalDashboard.columns.points')}</th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
+		
+		this.users.forEach(user => {
+			table += `<tr>
+							<th scope="row">${user.username}</th>
+							<td>${user.totalPoints}</td>
+						</tr>`
+		});
+		table += '</tbody></table>';
+
+
+		return table;
+	}
+
 
 	async addFuncionality() {
 
@@ -82,8 +125,8 @@ export default class extends Abstract {
 				</li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">${this.generateTable()}</div>
-				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Ranking is coming here</div>
+				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">${this.generateHistoryTable()}</div>
+				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">${this.generateRankingTable()}</div>
 				<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Graphs are coming here</div>
 			</div>
 		`;

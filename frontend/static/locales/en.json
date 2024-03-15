@@ -33,7 +33,8 @@
 		"title": "General Dashboard",
 		"columns": {
 			"id": "Match",
-			"players": "Players"
+			"players": "Players",
+			"points": "Points"
 		}
 	},
 	"home": {

@@ -33,7 +33,8 @@
 		"title": "Painel Geral",
 		"columns": {
 			"id": "Partida",
-			"players": "Jogadores"
+			"players": "Jogadores",
+			"points": "Pontos"
 		}
 	},
 	"home": {
