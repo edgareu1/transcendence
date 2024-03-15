@@ -5,6 +5,8 @@ export default class extends Abstract {
 		super(props);
 
 		this.params = props;
+		// we can use this to retreive data from database
+		this.userId = this.params.userId;
 
 		// this is mocking data from database
 		this.userData = {

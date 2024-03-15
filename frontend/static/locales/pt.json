@@ -31,6 +31,11 @@
 	},
 	"generalDashboard": {
 		"title": "Painel Geral",
+		"tabs": {
+			"history": "Histórico",
+			"ranking": "Classificação",
+			"graphs": "Gráficos"
+		},
 		"columns": {
 			"id": "Partida",
 			"players": "Jogadores",

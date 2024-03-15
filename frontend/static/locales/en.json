@@ -31,6 +31,11 @@
 	},
 	"generalDashboard": {
 		"title": "General Dashboard",
+		"tabs": {
+			"history": "History",
+			"ranking": "Ranking",
+			"graphs": "Graphs"
+		},
 		"columns": {
 			"id": "Match",
 			"players": "Players",

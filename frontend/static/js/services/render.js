@@ -7,24 +7,46 @@ const ROUTES = [
 	{ path: "/sign-up", title: "Sign-up", page: SignUp },
 	{ path: "/sign-in", title: "Sign-in", page: SignIn },
 	{ path: "/dashboard/general", title: "General statistics", page: GeneralDashboard },
-	{ path: "/dashboard/individual", title: "Individual statistics", page: IndividualDashboard }
+	{ path: "/dashboard/individual/:userId", title: "Individual statistics", page: IndividualDashboard }
 ];
+
+const getParams = (path) => {
+	const paramKeys = path.match(/\/:(\w+)*/g);
+	const regex = new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
+	
+	let params = {};
+
+	const paramValues = location.pathname.match(regex);
+	
+	paramKeys?.forEach((key, i) => {
+		let paramKey = key.replace("/:", "");
+		params[paramKey] = paramValues[i + 1];
+	});
+
+	return params;
+
+}
 
 const doesPathMatch = (path) => {
 	const regex = new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
-	return (location.pathname.match(regex) !== null)
+	return (location.pathname.match(regex) !== null);
 };
 
 const renderPage = async () => {
+	console.log("Rendering page");
 	let thisRoute = ROUTES.find(route => doesPathMatch(route.path));
 
 	if (!thisRoute) {
 		thisRoute = ROUTES[0];
 	}
 
-	const page = new thisRoute.page({ title: thisRoute.title });
+	let params = {};
 
+	if (thisRoute.path.search(":") !== -1) params = getParams(thisRoute.path);
+
+	const page = new thisRoute.page({ title: thisRoute.title, ...params });
+	
 	const navbar = new Navbar();
 	document.querySelector("#navbar").innerHTML = await navbar.getHtml();
 

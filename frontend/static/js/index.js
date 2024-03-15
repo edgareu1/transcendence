@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		while (currentElement.tagName && (currentElement.matches("[data-link]") || currentElement.parentNode)) {
 			if (currentElement.matches("[data-link]")) {
 				e.preventDefault();
-				navigateTo(currentElement.href);
+				navigateTo(currentElement.getAttribute("href"));
 				return;
 			}
 

@@ -96,9 +96,9 @@ export default class extends Abstract {
 						<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
 		
 		this.users.forEach(user => {
-			table += `<tr onclick="window.location='/dashboard/individual'">
+			table += `<tr href="/dashboard/individual/${user.userId}" data-link>
 							<th scope="row">${user.username}</th>
-							<td>${user.totalPoints}</td>
+							<td> ${user.totalPoints}</td>
 						</tr>`
 		});
 		table += '</tbody></table>';
@@ -119,20 +119,21 @@ export default class extends Abstract {
 
 			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 				<li class="nav-item" role="presentation">
-					<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">History</button>
+					<button class="nav-link active" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button" role="tab" aria-controls="pills-history" aria-selected="true">${i18next.t('generalDashboard.tabs.history')}</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Ranking</button>
+					<button class="nav-link" id="pills-ranking-tab" data-bs-toggle="pill" data-bs-target="#pills-ranking" type="button" role="tab" aria-controls="pills-ranking" aria-selected="false">${i18next.t('generalDashboard.tabs.ranking')}</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Graphs</button>
+					<button class="nav-link" id="pills-graphs-tab" data-bs-toggle="pill" data-bs-target="#pills-graphs" type="button" role="tab" aria-controls="pills-graphs" aria-selected="false">${i18next.t('generalDashboard.tabs.graphs')}</button>
 				</li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">${this.generateHistoryTable()}</div>
-				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">${this.generateRankingTable()}</div>
-				<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Graphs are coming here</div>
+				<div class="tab-pane fade show active" id="pills-history" role="tabpanel" aria-labelledby="pills-history-tab">${this.generateHistoryTable()}</div>
+				<div class="tab-pane fade" id="pills-ranking" role="tabpanel" aria-labelledby="pills-ranking-tab">${this.generateRankingTable()}</div>
+				<div class="tab-pane fade" id="pills-graphs" role="tabpanel" aria-labelledby="pills-gaphs-tab">Graphs are coming here</div>
 			</div>
 		`;
+		
 	}
 }

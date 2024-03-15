@@ -8,6 +8,9 @@ export default class extends Abstract {
 		this.languageToggle = new LanguageToggle();
 	}
 
+	// navbar.individualDashboard should pass the logged userId on href
+	// now it is hardcoded
+
 	async getHtml() {
 		return `
 			<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
@@ -38,7 +41,7 @@ export default class extends Abstract {
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a class="dropdown-item" href="/dashboard/individual" data-link>
+										<a class="dropdown-item" href="/dashboard/individual/1" data-link>
 											${i18next.t('navbar.individualDashboard')}
 										</a>
 									</li>
