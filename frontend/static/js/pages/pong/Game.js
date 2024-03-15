@@ -7,6 +7,8 @@ export default class Game {
 		this.canvas = document.querySelector("#canvas");
 		this.ctx = this.canvas.getContext("2d");
 		this.canvasArea = document.querySelector("#pong");
+		// Users should be created on Sign-Up. 
+		// Here we will retreive data from database by userId
 		this.leftPlayer = new User(player1);
 		this.rightPlayer = new User(player2);
 		this.animation;

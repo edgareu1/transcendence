@@ -21,6 +21,8 @@ main {
 	}
 }
 
+
+
 /* Override Bootstrap */
 .navbar {
 	--bs-navbar-nav-link-padding-x: 1rem !important;

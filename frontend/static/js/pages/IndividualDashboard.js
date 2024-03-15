@@ -67,6 +67,7 @@ export default class extends Abstract {
 	}
 
 	async addFuncionality() {
+		
 
 	}
 

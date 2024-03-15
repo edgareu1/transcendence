@@ -33,18 +33,22 @@ export default class extends Abstract {
 
 		this.users = [
 			{
+				userId: 1,
 				username: "Bob",
 				totalPoints: 10
 			},
 			{
+				userId: 2,
 				username:"Jeff",
 				totalPoints: 3
 			},
 			{
+				userId: 3,
 				username: "John",
 				totalPoints: 8
 			},
 			{
+				userId: 4,
 				username: "Will",
 				totalPoints: 2
 			}
@@ -79,9 +83,10 @@ export default class extends Abstract {
 	};
 
 	generateRankingTable() {
+		// data can be sorted on SQL query
 		this.users.sort((a, b) => b.totalPoints - a.totalPoints);
 		
-		let table = `<table class="table text-center">
+		let table = `<table class="table text-center table-hover">
 						<thead class="table-secondary">
 							<tr>
 								<th scope="col">${i18next.t('generalDashboard.columns.players')}</th>
@@ -91,7 +96,7 @@ export default class extends Abstract {
 						<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
 		
 		this.users.forEach(user => {
-			table += `<tr>
+			table += `<tr onclick="window.location='/dashboard/individual'">
 							<th scope="row">${user.username}</th>
 							<td>${user.totalPoints}</td>
 						</tr>`
@@ -104,7 +109,6 @@ export default class extends Abstract {
 
 
 	async addFuncionality() {
-
 	}
 
 	async getHtml() {
