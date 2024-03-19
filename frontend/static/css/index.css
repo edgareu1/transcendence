@@ -8,6 +8,10 @@ main {
 	padding-top: 24px;
 }
 
+.pong-buttons {
+	--bs-btn-bg: #BDBDBD !important;
+}
+
 @media (max-width: 992px) {
 	.navbar > .container {
 		padding-right: 140px;

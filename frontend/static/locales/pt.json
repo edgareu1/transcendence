@@ -4,7 +4,11 @@
 		"dashboard": "Dashboard (PT)",
 		"userManagement": "User Management (PT)",
 		"signUp": "Sign-up (PT)",
-		"signIn": "Sign-in (PT)"
+		"signIn": "Sign-in (PT)",
+		"pong": "Pong (PT)"
+	},
+	"pong": {
+		"title": "Pong (PT)"
 	},
 	"dashboard": {
 		"title": "Dashboard (PT)"

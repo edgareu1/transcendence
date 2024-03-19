@@ -4,7 +4,11 @@
 		"dashboard": "Dashboard (ES)",
 		"userManagement": "User Management (ES)",
 		"signUp": "Sign-up (ES)",
-		"signIn": "Sign-in (ES)"
+		"signIn": "Sign-in (ES)",
+		"pong": "Pong (ES)"
+	},
+	"pong": {
+		"title": "Pong (ES)"
 	},
 	"dashboard": {
 		"title": "Dashboard (ES)"
