@@ -34,7 +34,6 @@ const doesPathMatch = (path) => {
 };
 
 const renderPage = async () => {
-	console.log("Rendering page");
 	let thisRoute = ROUTES.find(route => doesPathMatch(route.path));
 
 	if (!thisRoute) {
@@ -52,7 +51,6 @@ const renderPage = async () => {
 
 	document.querySelector("#app").innerHTML = await page.getHtml();
 	document.title = thisRoute.title;
-
 	page.addFunctionality();
 };
 

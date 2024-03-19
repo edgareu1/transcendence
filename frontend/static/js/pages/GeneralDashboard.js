@@ -1,4 +1,5 @@
 import { Abstract } from "/static/js/components/index.js";
+import { FetchData } from "/static/js/services/index.js";
 
 export default class extends Abstract {
 	constructor(props) {
@@ -6,55 +7,13 @@ export default class extends Abstract {
 
 		this.params = props;
 
-		// this is mocking data from database
-		this.games = [
-			{
-				id: 1,
-				leftPlayer: "Bob",
-				rightPlayer: "Will",
-				leftPts: 3,
-				rightPts: 5
-			},
-			{
-				id: 2,
-				leftPlayer: "Jeff",
-				rightPlayer: "John",
-				leftPts: 5,
-				rightPts: 1
-			},
-			{
-				id: 3,
-				leftPlayer: "Bob",
-				rightPlayer: "John",
-				leftPts: 5,
-				rightPts: 2
-			}
-		];
-
-		this.users = [
-			{
-				userId: 1,
-				username: "Bob",
-				totalPoints: 10
-			},
-			{
-				userId: 2,
-				username:"Jeff",
-				totalPoints: 3
-			},
-			{
-				userId: 3,
-				username: "John",
-				totalPoints: 8
-			},
-			{
-				userId: 4,
-				username: "Will",
-				totalPoints: 2
-			}
-		];
+		this.data;
+		this.games;
+		this.users;
 		
 	}
+
+	async addFuncionality() {}
 
 	generateHistoryTable() {
 		
@@ -69,7 +28,7 @@ export default class extends Abstract {
 
 		this.games.forEach(game => {
 			table += `<tr>
-							<th scope="row" rowspan="2">${game.id}</th>
+							<th scope="row" rowspan="2">${game.gameId}</th>
 							<td class="border-bottom-0">${game.leftPlayer}</td>
 							<td class="border-bottom-0">${game.rightPlayer}</td>
 						</tr>
@@ -107,11 +66,12 @@ export default class extends Abstract {
 		return table;
 	}
 
-
-	async addFuncionality() {
-	}
-
 	async getHtml() {
+		// fetching data mocked on db.json
+		this.data = await FetchData.getData();
+		this.games = this.data.games;
+		this.users = this.data.users;
+
 		return `
 			<h1>
 				${i18next.t('generalDashboard.title')}

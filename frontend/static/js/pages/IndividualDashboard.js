@@ -1,43 +1,15 @@
 import { Abstract } from "/static/js/components/index.js";
+import { FetchData } from "/static/js/services/index.js";
 
 export default class extends Abstract {
 	constructor(props) {
 		super(props);
 
 		this.params = props;
+		this.data;
+		this.user;
 		// we can use this to retreive data from database
 		this.userId = this.params.userId;
-
-		// this is mocking data from database
-		this.userData = {
-			username: "Bob",
-			games: [
-				{
-					id: 1,
-					victory: true,
-					defeat: false,
-					opponent: "Jeff",
-					points: 5,
-					totalPoints: 5
-				},
-				{
-					id: 2,
-					victory: false,
-					defeat: true,
-					opponent: "Will",
-					points: 3,
-					totalPoints: 8
-				},
-				{
-					id: 3,
-					victory: false,
-					defeat: true,
-					opponent: "John",
-					points: 2,
-					totalPoints: 10
-				}
-			]
-		};
 	}
 
 	generateTable() {
@@ -54,29 +26,30 @@ export default class extends Abstract {
 						</thead>
 						<tbody class="table-group-divider" style="border-top-color: #6c757d">`;
 
-		this.userData.games.forEach(data => {
+		this.user.games.forEach(game => {
 			table += `<tr>
-							<th scope="row">${data.id}</th>
-							<td>${data.victory ? 'x' : ' '}</td>
-							<td>${data.defeat ? 'x' : ' '}</td>
-							<td>${data.opponent}</td>
-							<td>${data.points}</td>
-							<td>${data.totalPoints}</td>
+							<th scope="row">${game.gameId}</th>
+							<td>${game.victory ? 'x' : ' '}</td>
+							<td>${game.defeat ? 'x' : ' '}</td>
+							<td>${game.opponent}</td>
+							<td>${game.points}</td>
+							<td>${game.totalPoints}</td>
 						</tr>`;
 		});
 		table += '</tbody></table>';
 		return table;
 	}
 
-	async addFuncionality() {
-		
-
-	}
+	async addFuncionality() {}
 
 	async getHtml() {
+		// fetching data mocked on db.json
+		this.data = await FetchData.getData();
+		this.user = this.data.users.filter((user) => user.userId == this.userId)[0];
+
 		return `
 			<h1>
-				${i18next.t('individualDashboard.title')} - ${this.userData.username}
+				${i18next.t('individualDashboard.title')} - ${this.user.username}
 			</h1>
 			<div class="dashboard">${this.generateTable()}</div>
 		`;
