@@ -1,17 +1,17 @@
 import { Abstract } from "/static/js/components/index.js";
 
 export default class extends Abstract {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.params = props;
-	}
+    this.params = props;
+  }
 
-	async getHtml() {
-		return `
+  async getHtml() {
+    return `
 			<h1>
-				${i18next.t('dashboard.title')}
+				${i18next.t("dashboard.title")}
 			</h1>
 		`;
-	}
+  }
 }

@@ -1,1 +1,1 @@
-export const LOCALES = ['en', 'pt', 'es'];
+export const LOCALES = ["en", "pt", "es"];

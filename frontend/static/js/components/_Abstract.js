@@ -1,11 +1,11 @@
 export default class {
-	constructor(props) {
-		this.params = props;
-	}
+  constructor(props) {
+    this.params = props;
+  }
 
-	addFunctionality() {}
+  addFunctionality() {}
 
-	async getHtml() {
-		return "";
-	}
+  async getHtml() {
+    return "";
+  }
 }

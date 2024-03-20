@@ -1,29 +1,25 @@
 import { Abstract } from "/static/js/components/index.js";
 import { Game } from "/static/js/pages/pong/index.js";
 
+export default class extends Abstract {
+  constructor(props) {
+    super(props);
 
-export default class  extends Abstract {
-	constructor(props) {
-		super(props);
-		
-		this.params = props;
+    this.params = props;
+  }
 
-	}
+  async addFunctionality() {
+    //it is hardcoded but should be properties being received by app management
+    let game = new Game("ansilva-", "tpereira");
+    // game.id++;
 
-	async addFunctionality() {
+    game.draw();
+  }
 
-		//it is hardcoded but should be properties being received by app management
-		let game = new Game("ansilva-", "tpereira");
-		// game.id++;
-
-		game.draw();
-
-	}
-
-	async getHtml() {
-		return `
+  async getHtml() {
+    return `
 		<h1 class="mb-4">
-				${i18next.t('pong.title')}
+				${i18next.t("pong.title")}
 			</h1>
 		<div id="pong" tabindex="1" class="d-flex flex-column align-items-center m-4">
 			<div class="d-flex flex-column align-items-center">
@@ -49,6 +45,5 @@ export default class  extends Abstract {
 			</div>
 		</div>
 		`;
-	}
-
+  }
 }

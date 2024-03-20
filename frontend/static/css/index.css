@@ -1,30 +1,30 @@
 body {
-	font-family: 'Quicksand', sans-serif;
-	font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
 }
 
 main {
-	margin-top: 66px;
-	padding-top: 24px;
+  margin-top: 66px;
+  padding-top: 24px;
 }
 
 .pong-buttons {
-	--bs-btn-bg: #BDBDBD !important;
+  --bs-btn-bg: #bdbdbd !important;
 }
 
 @media (max-width: 992px) {
-	.navbar > .container {
-		padding-right: 140px;
-	}
+  .navbar > .container {
+    padding-right: 140px;
+  }
 
-	.language-toggle__wrapper {
-		position: absolute !important;
-		top: 6px;
-		right: 12px;
-	}
+  .language-toggle__wrapper {
+    position: absolute !important;
+    top: 6px;
+    right: 12px;
+  }
 }
 
 /* Override Bootstrap */
 .navbar {
-	--bs-navbar-nav-link-padding-x: 1rem !important;
+  --bs-navbar-nav-link-padding-x: 1rem !important;
 }

@@ -1,53 +1,53 @@
 {
-	"navbar": {
-		"home": "Home (ES)",
-		"dashboard": "Dashboard (ES)",
-		"userManagement": "User Management (ES)",
-		"signUp": "Sign-up (ES)",
-		"signIn": "Sign-in (ES)",
-		"pong": "Pong (ES)"
-	},
-	"pong": {
-		"title": "Pong (ES)"
-	},
-	"dashboard": {
-		"title": "Dashboard (ES)"
-	},
-	"home": {
-		"title": "Home (ES)"
-	},
-	"signIn": {
-		"title": "Sign-in (ES)",
-		"fields": {
-			"email": {
-				"label": "Email address (ES)",
-				"invalidFeedback": "Please choose a valid email. (ES)"
-			},
-			"password": {
-				"label": "Password (ES)",
-				"invalidFeedback": "Please choose a valid password. (ES)"
-			}
-		},
-		"submitButton": "Submit (ES)"
-	},
-	"signUp": {
-		"title": "Sign-up (ES)",
-		"fields": {
-			"email": {
-				"label": "Email address (ES)",
-				"invalidFeedback": "Please choose a valid email. (ES)",
-				"help": "We'll never share your email with anyone else. (ES)"
-			},
-			"username": {
-				"label": "Username (ES)",
-				"invalidFeedback": "Please choose a valid username. (ES)",
-				"help": "How the other players will see you (ES)"
-			},
-			"password": {
-				"label": "Password (ES)",
-				"invalidFeedback": "Please choose a valid password. (ES)"
-			}
-		},
-		"submitButton": "Submit (ES)"
-	}
+  "navbar": {
+    "home": "Home (ES)",
+    "dashboard": "Dashboard (ES)",
+    "userManagement": "User Management (ES)",
+    "signUp": "Sign-up (ES)",
+    "signIn": "Sign-in (ES)",
+    "pong": "Pong (ES)"
+  },
+  "pong": {
+    "title": "Pong (ES)"
+  },
+  "dashboard": {
+    "title": "Dashboard (ES)"
+  },
+  "home": {
+    "title": "Home (ES)"
+  },
+  "signIn": {
+    "title": "Sign-in (ES)",
+    "fields": {
+      "email": {
+        "label": "Email address (ES)",
+        "invalidFeedback": "Please choose a valid email. (ES)"
+      },
+      "password": {
+        "label": "Password (ES)",
+        "invalidFeedback": "Please choose a valid password. (ES)"
+      }
+    },
+    "submitButton": "Submit (ES)"
+  },
+  "signUp": {
+    "title": "Sign-up (ES)",
+    "fields": {
+      "email": {
+        "label": "Email address (ES)",
+        "invalidFeedback": "Please choose a valid email. (ES)",
+        "help": "We'll never share your email with anyone else. (ES)"
+      },
+      "username": {
+        "label": "Username (ES)",
+        "invalidFeedback": "Please choose a valid username. (ES)",
+        "help": "How the other players will see you (ES)"
+      },
+      "password": {
+        "label": "Password (ES)",
+        "invalidFeedback": "Please choose a valid password. (ES)"
+      }
+    },
+    "submitButton": "Submit (ES)"
+  }
 }

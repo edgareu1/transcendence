@@ -1,53 +1,53 @@
 {
-	"navbar": {
-		"home": "Home (PT)",
-		"dashboard": "Dashboard (PT)",
-		"userManagement": "User Management (PT)",
-		"signUp": "Sign-up (PT)",
-		"signIn": "Sign-in (PT)",
-		"pong": "Pong (PT)"
-	},
-	"pong": {
-		"title": "Pong (PT)"
-	},
-	"dashboard": {
-		"title": "Dashboard (PT)"
-	},
-	"home": {
-		"title": "Home (PT)"
-	},
-	"signIn": {
-		"title": "Sign-in (PT)",
-		"fields": {
-			"email": {
-				"label": "Email address (PT)",
-				"invalidFeedback": "Please choose a valid email. (PT)"
-			},
-			"password": {
-				"label": "Password (PT)",
-				"invalidFeedback": "Please choose a valid password. (PT)"
-			}
-		},
-		"submitButton": "Submit (PT)"
-	},
-	"signUp": {
-		"title": "Sign-up (PT)",
-		"fields": {
-			"email": {
-				"label": "Email address (PT)",
-				"invalidFeedback": "Please choose a valid email. (PT)",
-				"help": "We'll never share your email with anyone else. (PT)"
-			},
-			"username": {
-				"label": "Username (PT)",
-				"invalidFeedback": "Please choose a valid username. (PT)",
-				"help": "How the other players will see you (PT)"
-			},
-			"password": {
-				"label": "Password (PT)",
-				"invalidFeedback": "Please choose a valid password. (PT)"
-			}
-		},
-		"submitButton": "Submit (PT)"
-	}
+  "navbar": {
+    "home": "Home (PT)",
+    "dashboard": "Dashboard (PT)",
+    "userManagement": "User Management (PT)",
+    "signUp": "Sign-up (PT)",
+    "signIn": "Sign-in (PT)",
+    "pong": "Pong (PT)"
+  },
+  "pong": {
+    "title": "Pong (PT)"
+  },
+  "dashboard": {
+    "title": "Dashboard (PT)"
+  },
+  "home": {
+    "title": "Home (PT)"
+  },
+  "signIn": {
+    "title": "Sign-in (PT)",
+    "fields": {
+      "email": {
+        "label": "Email address (PT)",
+        "invalidFeedback": "Please choose a valid email. (PT)"
+      },
+      "password": {
+        "label": "Password (PT)",
+        "invalidFeedback": "Please choose a valid password. (PT)"
+      }
+    },
+    "submitButton": "Submit (PT)"
+  },
+  "signUp": {
+    "title": "Sign-up (PT)",
+    "fields": {
+      "email": {
+        "label": "Email address (PT)",
+        "invalidFeedback": "Please choose a valid email. (PT)",
+        "help": "We'll never share your email with anyone else. (PT)"
+      },
+      "username": {
+        "label": "Username (PT)",
+        "invalidFeedback": "Please choose a valid username. (PT)",
+        "help": "How the other players will see you (PT)"
+      },
+      "password": {
+        "label": "Password (PT)",
+        "invalidFeedback": "Please choose a valid password. (PT)"
+      }
+    },
+    "submitButton": "Submit (PT)"
+  }
 }
