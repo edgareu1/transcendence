@@ -1,6 +1,6 @@
 export default class User {
   constructor(username) {
-		this.userId = 1; // reference to manipulate database
+    this.userId = 1; // reference to manipulate database
     this.username = username;
     this.score = 0;
     this.games = [];

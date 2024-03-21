@@ -8,8 +8,8 @@ export default class extends Abstract {
     this.languageToggle = new LanguageToggle();
   }
 
-	// navbar.individualDashboard should pass the logged userId on href
-	// now it is hardcoded
+  // navbar.individualDashboard should pass the logged userId on href
+  // now it is hardcoded
 
   async getHtml() {
     return `
@@ -37,17 +37,17 @@ export default class extends Abstract {
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									${i18next.t('navbar.dashboard')}
+									${i18next.t("navbar.dashboard")}
 								</a>
 								<ul class="dropdown-menu">
 									<li>
 										<a class="dropdown-item" href="/dashboard/individual/1" data-link>
-											${i18next.t('navbar.individualDashboard')}
+											${i18next.t("navbar.individualDashboard")}
 										</a>
 									</li>
 									<li>
 										<a class="dropdown-item" href="/dashboard/general" data-link>
-											${i18next.t('navbar.generalDashboard')}
+											${i18next.t("navbar.generalDashboard")}
 										</a>
 									</li>
 								</ul>

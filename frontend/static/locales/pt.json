@@ -2,8 +2,8 @@
   "navbar": {
     "home": "Home (PT)",
     "dashboard": "Painel",
-		"individualDashboard": "Estatísticas Individuais",
-		"generalDashboard": "Estatísticas Gerais",
+    "individualDashboard": "Estatísticas Individuais",
+    "generalDashboard": "Estatísticas Gerais",
     "userManagement": "Gestão de usuários",
     "signUp": "Inscrever-se",
     "signIn": "Iniciar",
@@ -11,36 +11,36 @@
   },
   "pong": {
     "title": "Pong",
-		"buttons": {
-			"start": "Iniciar",
-			"pause": "Pausar",
-			"continue": "Continuar",
-			"restart": "Reiniciar"
-		}
+    "buttons": {
+      "start": "Iniciar",
+      "pause": "Pausar",
+      "continue": "Continuar",
+      "restart": "Reiniciar"
+    }
   },
   "individualDashboard": {
     "title": "Estatísticas",
-		"columns": {
-			"id": "Partida",
-			"victory": "Vitória",
-			"defeat": "Derrota",
-			"opponent": "Adversário",
-			"points": "Pontos",
-			"total": "Total de Pontos"
-		}
-	},
-	"generalDashboard": {
-		"title": "Painel Geral",
-		"tabs": {
-			"history": "Histórico",
-			"ranking": "Classificação",
-			"graphs": "Gráficos"
-		},
-		"columns": {
-			"id": "Partida",
-			"players": "Jogadores",
-			"points": "Pontos"
-		}
+    "columns": {
+      "id": "Partida",
+      "victory": "Vitória",
+      "defeat": "Derrota",
+      "opponent": "Adversário",
+      "points": "Pontos",
+      "total": "Total de Pontos"
+    }
+  },
+  "generalDashboard": {
+    "title": "Painel Geral",
+    "tabs": {
+      "history": "Histórico",
+      "ranking": "Classificação",
+      "graphs": "Gráficos"
+    },
+    "columns": {
+      "id": "Partida",
+      "players": "Jogadores",
+      "points": "Pontos"
+    }
   },
   "home": {
     "title": "Home (PT)"

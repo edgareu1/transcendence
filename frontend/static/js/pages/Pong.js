@@ -8,13 +8,11 @@ export default class extends Abstract {
     this.params = props;
   }
 
-	async addFunctionality() {
-
-		//it is hardcoded but should be properties being received by app management
-		let game = new Game("ansilva-", "tpereira");
-		game.draw();
-
-	}
+  async addFunctionality() {
+    //it is hardcoded but should be properties being received by app management
+    let game = new Game("ansilva-", "tpereira");
+    game.draw();
+  }
 
   async getHtml() {
     return `
@@ -26,9 +24,9 @@ export default class extends Abstract {
 				<canvas id="canvas" width="600" height="400" class="bg-dark"></canvas>
 			</div>
 			<div class="buttons d-flex justify-content-around mt-2">
-				<button id="start-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t('pong.buttons.start')}</button>
-				<button id="pause-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t('pong.buttons.pause')}</button>
-				<button id="restart-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t('pong.buttons.restart')}</button>
+				<button id="start-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t("pong.buttons.start")}</button>
+				<button id="pause-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t("pong.buttons.pause")}</button>
+				<button id="restart-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t("pong.buttons.restart")}</button>
 			</div>
 		</div>
 

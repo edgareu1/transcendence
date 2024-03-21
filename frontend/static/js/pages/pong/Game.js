@@ -1,17 +1,16 @@
 import { User } from "/static/js/pages/pong/index.js";
 
 export default class Game {
-	constructor(player1, player2) {
-
-		// Getting canvas context
-		this.canvas = document.querySelector("#canvas");
-		this.ctx = this.canvas.getContext("2d");
-		this.canvasArea = document.querySelector("#pong");
-		// Users should be created on Sign-Up. 
-		// Here we will retreive data from database by userId
-		this.leftPlayer = new User(player1);
-		this.rightPlayer = new User(player2);
-		this.animation;
+  constructor(player1, player2) {
+    // Getting canvas context
+    this.canvas = document.querySelector("#canvas");
+    this.ctx = this.canvas.getContext("2d");
+    this.canvasArea = document.querySelector("#pong");
+    // Users should be created on Sign-Up.
+    // Here we will retreive data from database by userId
+    this.leftPlayer = new User(player1);
+    this.rightPlayer = new User(player2);
+    this.animation;
 
     // Getting elements references on DOM
     this.startBtn = document.querySelector("#start-btn");
@@ -49,10 +48,10 @@ export default class Game {
     this.pauseBtn.addEventListener("click", () => {
       if (this.isGameOn && !this.isGamePaused) {
         this.isGamePaused = true;
-        this.pauseBtn.innerHTML = i18next.t('pong.buttons.continue');
+        this.pauseBtn.innerHTML = i18next.t("pong.buttons.continue");
         cancelAnimationFrame(this.animation);
       } else if (this.isGamePaused) {
-        this.pauseBtn.innerHTML = i18next.t('pong.buttons.pause');
+        this.pauseBtn.innerHTML = i18next.t("pong.buttons.pause");
         this.isGameOn = false;
         this.isGamePaused = false;
         this.start();
@@ -67,7 +66,7 @@ export default class Game {
       this.restart();
     });
   }
-	static history = [];
+  static history = [];
 
   static id = 1;
 
@@ -228,16 +227,14 @@ export default class Game {
     // winner.printScores();
     // looser.printScores();
 
-		// this will be pushed to database
-		Game.history.push(
-			{
-				id: Game.id,
-				leftPlayer: this.leftPlayer.username,
-				rightPlayer: this.rightPlayer.username,
-				leftPts: this.leftPlayer.score,
-				rightPts: this.rightPlayer.score
-			}
-		);
+    // this will be pushed to database
+    Game.history.push({
+      id: Game.id,
+      leftPlayer: this.leftPlayer.username,
+      rightPlayer: this.rightPlayer.username,
+      leftPts: this.leftPlayer.score,
+      rightPts: this.rightPlayer.score,
+    });
   }
 
   endGame(winner) {

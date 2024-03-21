@@ -2,8 +2,8 @@
   "navbar": {
     "home": "Home",
     "dashboard": "Dashboard",
-		"individualDashboard": "Personal Statistics",
-		"generalDashboard": "General Statistics",
+    "individualDashboard": "Personal Statistics",
+    "generalDashboard": "General Statistics",
     "userManagement": "User Management",
     "signUp": "Sign-up",
     "signIn": "Sign-in",
@@ -11,36 +11,36 @@
   },
   "pong": {
     "title": "Pong",
-		"buttons": {
-			"start": "Start",
-			"pause": "Pause",
-			"continue": "Continue",
-			"restart": "Restart"
-		}
+    "buttons": {
+      "start": "Start",
+      "pause": "Pause",
+      "continue": "Continue",
+      "restart": "Restart"
+    }
   },
   "individualDashboard": {
     "title": "Statistics",
-		"columns": {
-			"id": "Match",
-			"victory": "Victory",
-			"defeat": "Defeat",
-			"opponent": "Opponent",
-			"points": "Points",
-			"total": "Total Points"
-		}
-	},
-	"generalDashboard": {
-		"title": "General Dashboard",
-		"tabs": {
-			"history": "History",
-			"ranking": "Ranking",
-			"graphs": "Graphs"
-		},
-		"columns": {
-			"id": "Match",
-			"players": "Players",
-			"points": "Points"
-		}
+    "columns": {
+      "id": "Match",
+      "victory": "Victory",
+      "defeat": "Defeat",
+      "opponent": "Opponent",
+      "points": "Points",
+      "total": "Total Points"
+    }
+  },
+  "generalDashboard": {
+    "title": "General Dashboard",
+    "tabs": {
+      "history": "History",
+      "ranking": "Ranking",
+      "graphs": "Graphs"
+    },
+    "columns": {
+      "id": "Match",
+      "players": "Players",
+      "points": "Points"
+    }
   },
   "home": {
     "title": "Home"
