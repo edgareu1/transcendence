@@ -1,25 +1,25 @@
 {
-	"navbar": {
-		"home": "Inicio",
-		"dashboard": "Tablero",
+  "navbar": {
+    "home": "Inicio",
+    "dashboard": "Tablero",
 		"individualDashboard": "Estadísticas Individuales",
 		"generalDashboard": "Estadísticas Generales",
-		"userManagement": "Gestión de Usuarios",
-		"signUp": "Inscribirse",
-		"signIn": "Iniciar Sesión",
-		"pong": "Pong"
-	},
-	"pong": {
-		"title": "Pong",
+    "userManagement": "Gestión de Usuarios",
+    "signUp": "Inscribirse",
+    "signIn": "Iniciar Sesión",
+    "pong": "Pong"
+  },
+  "pong": {
+    "title": "Pong",
 		"buttons": {
 			"start": "Iniciar",
 			"pause": "Pausar",
 			"continue": "Continuar",
 			"restart": "Reiniciar"
 		}
-	},
-	"individualDashboard": {
-		"title": "Estadísticas",
+  },
+  "individualDashboard": {
+    "title": "Estadísticas",
 		"columns": {
 			"id": "Juego",
 			"victory": "Victoria",
@@ -41,42 +41,42 @@
 			"players": "Jugadores",
 			"points": "Puntos"
 		}
-	},
-	"home": {
-		"title": "Inicio"
-	},
-	"signIn": {
-		"title": "Iniciar Sesión",
-		"fields": {
-			"email": {
-				"label": "Correo electrónico",
-				"invalidFeedback": "Por favor elija un correo electrónico válido."
-			},
-			"password": {
-				"label": "Contraseña",
-				"invalidFeedback": "Por favor elija una contraseña válida."
-			}
-		},
-		"submitButton": "Enviar"
-	},
-	"signUp": {
-		"title": "Inscribirse",
-		"fields": {
-			"email": {
-				"label": "Correo electrónico",
-				"invalidFeedback": "Por favor elija un correo electrónico válido.",
-				"help": "Nunca compartiremos su correo electrónico con nadie más."
-			},
-			"username": {
-				"label": "Nombre de usuario",
-				"invalidFeedback": "Por favor elija un nombre de usuario válido.",
-				"help": "Cómo te verán los otros jugadores."
-			},
-			"password": {
-				"label": "Contraseña",
-				"invalidFeedback": "Por favor elija una contraseña válida."
-			}
-		},
-		"submitButton": "Enviar"
-	}
+  },
+  "home": {
+    "title": "Inicio"
+  },
+  "signIn": {
+    "title": "Iniciar Sesión",
+    "fields": {
+      "email": {
+        "label": "Correo electrónico",
+        "invalidFeedback": "Por favor elija un correo electrónico válido."
+      },
+      "password": {
+        "label": "Contraseña",
+        "invalidFeedback": "Por favor elija una contraseña válida."
+      }
+    },
+    "submitButton": "Enviar"
+  },
+  "signUp": {
+    "title": "Inscribirse",
+    "fields": {
+      "email": {
+        "label": "Correo electrónico",
+        "invalidFeedback": "Por favor elija un correo electrónico válido.",
+        "help": "Nunca compartiremos su correo electrónico con nadie más."
+      },
+      "username": {
+        "label": "Nombre de usuario",
+        "invalidFeedback": "Por favor elija un nombre de usuario válido.",
+        "help": "Cómo te verán los otros jugadores."
+      },
+      "password": {
+        "label": "Contraseña",
+        "invalidFeedback": "Por favor elija una contraseña válida."
+      }
+    },
+    "submitButton": "Enviar"
+  }
 }

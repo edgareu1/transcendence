@@ -1,25 +1,25 @@
 {
-	"navbar": {
-		"home": "Home",
-		"dashboard": "Dashboard",
+  "navbar": {
+    "home": "Home",
+    "dashboard": "Dashboard",
 		"individualDashboard": "Personal Statistics",
 		"generalDashboard": "General Statistics",
-		"userManagement": "User Management",
-		"signUp": "Sign-up",
-		"signIn": "Sign-in",
-		"pong": "Pong"
-	},
-	"pong": {
-		"title": "Pong",
+    "userManagement": "User Management",
+    "signUp": "Sign-up",
+    "signIn": "Sign-in",
+    "pong": "Pong"
+  },
+  "pong": {
+    "title": "Pong",
 		"buttons": {
 			"start": "Start",
 			"pause": "Pause",
 			"continue": "Continue",
 			"restart": "Restart"
 		}
-	},
-	"individualDashboard": {
-		"title": "Statistics",
+  },
+  "individualDashboard": {
+    "title": "Statistics",
 		"columns": {
 			"id": "Match",
 			"victory": "Victory",
@@ -41,42 +41,42 @@
 			"players": "Players",
 			"points": "Points"
 		}
-	},
-	"home": {
-		"title": "Home"
-	},
-	"signIn": {
-		"title": "Sign-in",
-		"fields": {
-			"email": {
-				"label": "Email address",
-				"invalidFeedback": "Please choose a valid email."
-			},
-			"password": {
-				"label": "Password",
-				"invalidFeedback": "Please choose a valid password."
-			}
-		},
-		"submitButton": "Submit"
-	},
-	"signUp": {
-		"title": "Sign-up",
-		"fields": {
-			"email": {
-				"label": "Email address",
-				"invalidFeedback": "Please choose a valid email.",
-				"help": "We'll never share your email with anyone else."
-			},
-			"username": {
-				"label": "Username",
-				"invalidFeedback": "Please choose a valid username.",
-				"help": "How the other players will see you"
-			},
-			"password": {
-				"label": "Password",
-				"invalidFeedback": "Please choose a valid password."
-			}
-		},
-		"submitButton": "Submit"
-	}
+  },
+  "home": {
+    "title": "Home"
+  },
+  "signIn": {
+    "title": "Sign-in",
+    "fields": {
+      "email": {
+        "label": "Email address",
+        "invalidFeedback": "Please choose a valid email."
+      },
+      "password": {
+        "label": "Password",
+        "invalidFeedback": "Please choose a valid password."
+      }
+    },
+    "submitButton": "Submit"
+  },
+  "signUp": {
+    "title": "Sign-up",
+    "fields": {
+      "email": {
+        "label": "Email address",
+        "invalidFeedback": "Please choose a valid email.",
+        "help": "We'll never share your email with anyone else."
+      },
+      "username": {
+        "label": "Username",
+        "invalidFeedback": "Please choose a valid username.",
+        "help": "How the other players will see you"
+      },
+      "password": {
+        "label": "Password",
+        "invalidFeedback": "Please choose a valid password."
+      }
+    },
+    "submitButton": "Submit"
+  }
 }

@@ -10,8 +10,9 @@ export default class extends Abstract {
   async getHtml() {
     return `
 			<h1>
-				${i18next.t("home.title")}
+				${i18next.t("dashboard.title")}
 			</h1>
 		`;
   }
 }
+
