@@ -1,53 +1,82 @@
 {
-	"navbar": {
-		"home": "Home (ES)",
-		"dashboard": "Dashboard (ES)",
-		"userManagement": "User Management (ES)",
-		"signUp": "Sign-up (ES)",
-		"signIn": "Sign-in (ES)",
-		"pong": "Pong (ES)"
-	},
-	"pong": {
-		"title": "Pong (ES)"
-	},
-	"dashboard": {
-		"title": "Dashboard (ES)"
-	},
-	"home": {
-		"title": "Home (ES)"
-	},
-	"signIn": {
-		"title": "Sign-in (ES)",
-		"fields": {
-			"email": {
-				"label": "Email address (ES)",
-				"invalidFeedback": "Please choose a valid email. (ES)"
-			},
-			"password": {
-				"label": "Password (ES)",
-				"invalidFeedback": "Please choose a valid password. (ES)"
-			}
-		},
-		"submitButton": "Submit (ES)"
-	},
-	"signUp": {
-		"title": "Sign-up (ES)",
-		"fields": {
-			"email": {
-				"label": "Email address (ES)",
-				"invalidFeedback": "Please choose a valid email. (ES)",
-				"help": "We'll never share your email with anyone else. (ES)"
-			},
-			"username": {
-				"label": "Username (ES)",
-				"invalidFeedback": "Please choose a valid username. (ES)",
-				"help": "How the other players will see you (ES)"
-			},
-			"password": {
-				"label": "Password (ES)",
-				"invalidFeedback": "Please choose a valid password. (ES)"
-			}
-		},
-		"submitButton": "Submit (ES)"
-	}
+  "navbar": {
+    "home": "Inicio",
+    "dashboard": "Tablero",
+    "individualDashboard": "Estadísticas Individuales",
+    "generalDashboard": "Estadísticas Generales",
+    "userManagement": "Gestión de Usuarios",
+    "signUp": "Inscribirse",
+    "signIn": "Iniciar Sesión",
+    "pong": "Pong"
+  },
+  "pong": {
+    "title": "Pong",
+    "buttons": {
+      "start": "Iniciar",
+      "pause": "Pausar",
+      "continue": "Continuar",
+      "restart": "Reiniciar"
+    }
+  },
+  "individualDashboard": {
+    "title": "Estadísticas",
+    "columns": {
+      "id": "Juego",
+      "victory": "Victoria",
+      "defeat": "Derrota",
+      "opponent": "Adversario",
+      "points": "Puntos",
+      "total": "Puntos Totales"
+    }
+  },
+  "generalDashboard": {
+    "title": "Tablero General",
+    "tabs": {
+      "history": "Histórico",
+      "ranking": "Clasificación",
+      "graphs": "Graficos"
+    },
+    "columns": {
+      "id": "Juego",
+      "players": "Jugadores",
+      "points": "Puntos"
+    }
+  },
+  "home": {
+    "title": "Inicio"
+  },
+  "signIn": {
+    "title": "Iniciar Sesión",
+    "fields": {
+      "email": {
+        "label": "Correo electrónico",
+        "invalidFeedback": "Por favor elija un correo electrónico válido."
+      },
+      "password": {
+        "label": "Contraseña",
+        "invalidFeedback": "Por favor elija una contraseña válida."
+      }
+    },
+    "submitButton": "Enviar"
+  },
+  "signUp": {
+    "title": "Inscribirse",
+    "fields": {
+      "email": {
+        "label": "Correo electrónico",
+        "invalidFeedback": "Por favor elija un correo electrónico válido.",
+        "help": "Nunca compartiremos su correo electrónico con nadie más."
+      },
+      "username": {
+        "label": "Nombre de usuario",
+        "invalidFeedback": "Por favor elija un nombre de usuario válido.",
+        "help": "Cómo te verán los otros jugadores."
+      },
+      "password": {
+        "label": "Contraseña",
+        "invalidFeedback": "Por favor elija una contraseña válida."
+      }
+    },
+    "submitButton": "Enviar"
+  }
 }

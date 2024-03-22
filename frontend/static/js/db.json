@@ -1,0 +1,172 @@
+{
+  "users": [
+    {
+      "userId": 1,
+      "username": "Bob",
+      "totalPoints": 10,
+      "games": [
+        {
+          "gameId": 1,
+          "victory": true,
+          "defeat": false,
+          "opponent": "Jeff",
+          "points": 5,
+          "totalPoints": 5
+        },
+        {
+          "gameId": 2,
+          "victory": false,
+          "defeat": true,
+          "opponent": "Will",
+          "points": 3,
+          "totalPoints": 8
+        },
+        {
+          "gameId": 3,
+          "victory": false,
+          "defeat": true,
+          "opponent": "John",
+          "points": 2,
+          "totalPoints": 10
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "username": "Jeff",
+      "totalPoints": 7,
+      "games": [
+        {
+          "gameId": 1,
+          "victory": false,
+          "defeat": true,
+          "opponent": "Bob",
+          "points": 2,
+          "totalPoints": 2
+        },
+        {
+          "gameId": 4,
+          "victory": false,
+          "defeat": true,
+          "opponent": "Will",
+          "points": 3,
+          "totalPoints": 5
+        },
+        {
+          "gameId": 5,
+          "victory": false,
+          "defeat": true,
+          "opponent": "John",
+          "points": 2,
+          "totalPoints": 7
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "username": "John",
+      "totalPoints": 13,
+      "games": [
+        {
+          "gameId": 3,
+          "victory": true,
+          "defeat": false,
+          "opponent": "Bob",
+          "points": 5,
+          "totalPoints": 5
+        },
+        {
+          "gameId": 5,
+          "victory": true,
+          "defeat": false,
+          "opponent": "Jeff",
+          "points": 5,
+          "totalPoints": 10
+        },
+        {
+          "gameId": 6,
+          "victory": false,
+          "defeat": true,
+          "opponent": "Will",
+          "points": 3,
+          "totalPoints": 13
+        }
+      ]
+    },
+    {
+      "userId": 4,
+      "username": "Will",
+      "totalPoints": 15,
+      "games": [
+        {
+          "gameId": 2,
+          "victory": true,
+          "defeat": false,
+          "opponent": "Bob",
+          "points": 5,
+          "totalPoints": 5
+        },
+        {
+          "gameId": 4,
+          "victory": true,
+          "defeat": false,
+          "opponent": "Jeff",
+          "points": 5,
+          "totalPoints": 10
+        },
+        {
+          "gameId": 6,
+          "victory": true,
+          "defeat": false,
+          "opponent": "John",
+          "points": 5,
+          "totalPoints": 15
+        }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "gameId": 1,
+      "leftPlayer": "Bob",
+      "rightPlayer": "Jeff",
+      "leftPts": 5,
+      "rightPts": 2
+    },
+    {
+      "gameId": 2,
+      "leftPlayer": "Bob",
+      "rightPlayer": "Will",
+      "leftPts": 3,
+      "rightPts": 5
+    },
+    {
+      "gameId": 3,
+      "leftPlayer": "Bob",
+      "rightPlayer": "John",
+      "leftPts": 2,
+      "rightPts": 5
+    },
+    {
+      "gameId": 4,
+      "leftPlayer": "Jeff",
+      "rightPlayer": "Will",
+      "leftPts": 3,
+      "rightPts": 5
+    },
+    {
+      "gameId": 5,
+      "leftPlayer": "Jeff",
+      "rightPlayer": "John",
+      "leftPts": 2,
+      "rightPts": 5
+    },
+    {
+      "gameId": 6,
+      "leftPlayer": "John",
+      "rightPlayer": "Will",
+      "leftPts": 3,
+      "rightPts": 5
+    }
+  ]
+}

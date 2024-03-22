@@ -1,38 +1,32 @@
 import { Abstract } from "/static/js/components/index.js";
 import { Game } from "/static/js/pages/pong/index.js";
 
+export default class extends Abstract {
+  constructor(props) {
+    super(props);
 
-export default class  extends Abstract {
-	constructor(props) {
-		super(props);
-		
-		this.params = props;
+    this.params = props;
+  }
 
-	}
+  async addFunctionality() {
+    //it is hardcoded but should be properties being received by app management
+    let game = new Game("ansilva-", "tpereira");
+    game.draw();
+  }
 
-	async addFunctionality() {
-
-		//it is hardcoded but should be properties being received by app management
-		let game = new Game("ansilva-", "tpereira");
-		// game.id++;
-
-		game.draw();
-
-	}
-
-	async getHtml() {
-		return `
+  async getHtml() {
+    return `
 		<h1 class="mb-4">
-				${i18next.t('pong.title')}
+				${i18next.t("pong.title")}
 			</h1>
 		<div id="pong" tabindex="1" class="d-flex flex-column align-items-center m-4">
 			<div class="d-flex flex-column align-items-center">
 				<canvas id="canvas" width="600" height="400" class="bg-dark"></canvas>
 			</div>
 			<div class="buttons d-flex justify-content-around mt-2">
-				<button id="start-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">Start</button>
-				<button id="pause-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">Pause</button>
-				<button id="restart-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">Restart</button>
+				<button id="start-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t("pong.buttons.start")}</button>
+				<button id="pause-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t("pong.buttons.pause")}</button>
+				<button id="restart-btn" type="button" class="btn pong-buttons w-50 m-1 shadow">${i18next.t("pong.buttons.restart")}</button>
 			</div>
 		</div>
 
@@ -49,6 +43,5 @@ export default class  extends Abstract {
 			</div>
 		</div>
 		`;
-	}
-
+  }
 }

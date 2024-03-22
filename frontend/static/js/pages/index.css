@@ -1,0 +1,12 @@
+.pong-buttons {
+  --bs-btn-bg: #bdbdbd !important;
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #6c757d !important;
+}
+
+.nav-link {
+  --bs-nav-link-color: #727273 !important;
+  --bs-nav-link-hover-color: #000000cc !important;
+}

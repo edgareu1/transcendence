@@ -1,15 +1,18 @@
 import { Abstract, LanguageToggle } from "./index.js";
 
 export default class extends Abstract {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.params = props;
-		this.languageToggle = new LanguageToggle();
-	}
+    this.params = props;
+    this.languageToggle = new LanguageToggle();
+  }
 
-	async getHtml() {
-		return `
+  // navbar.individualDashboard should pass the logged userId on href
+  // now it is hardcoded
+
+  async getHtml() {
+    return `
 			<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
 				<div class="container position-relative">
 					<a class="navbar-brand" href="/" data-link>
@@ -24,32 +27,44 @@ export default class extends Abstract {
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="page" href="/" data-link>
-									${i18next.t('navbar.home')}
+									${i18next.t("navbar.home")}
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="page" href="/pong" data-link>
-									${i18next.t('navbar.pong')}
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="/dashboard" data-link>
-									${i18next.t('navbar.dashboard')}
+									${i18next.t("navbar.pong")}
 								</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									${i18next.t('navbar.userManagement')}
+									${i18next.t("navbar.dashboard")}
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" href="/dashboard/individual/1" data-link>
+											${i18next.t("navbar.individualDashboard")}
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="/dashboard/general" data-link>
+											${i18next.t("navbar.generalDashboard")}
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									${i18next.t("navbar.userManagement")}
 								</a>
 								<ul class="dropdown-menu">
 									<li>
 										<a class="dropdown-item" href="/sign-up" data-link>
-											${i18next.t('navbar.signUp')}
+											${i18next.t("navbar.signUp")}
 										</a>
 									</li>
 									<li>
 										<a class="dropdown-item" href="/sign-in" data-link>
-											${i18next.t('navbar.signIn')}
+											${i18next.t("navbar.signIn")}
 										</a>
 									</li>
 									<li>
@@ -57,7 +72,7 @@ export default class extends Abstract {
 									</li>
 									<li>
 										<a class="dropdown-item" href="/" data-link>
-											${i18next.t('navbar.home')}
+											${i18next.t("navbar.home")}
 										</a>
 									</li>
 								</ul>
@@ -69,5 +84,5 @@ export default class extends Abstract {
 				</div>
 			</nav>
 		`;
-	}
+  }
 }
