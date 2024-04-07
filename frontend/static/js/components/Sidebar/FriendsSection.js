@@ -46,84 +46,70 @@ export default class extends Abstract {
 
 		const accepted = this.data.filter(({ was_accepted }) => was_accepted)
 			.map(({ id, user1, user2 }) => ({ id, user: (user1.id == 1) ? user2 : user1 }));
-
-		const pending = this.data.filter(({ was_accepted, was_canceled, was_refused }) => !was_accepted && !was_canceled && !was_refused);
-		const pedingReceived = pending.filter(({ user1 }) => user1.id == 1)
+		const invitations = this.data.filter(({ was_accepted, was_canceled, was_refused, user1 }) => !was_accepted && !was_canceled && !was_refused && (user1.id == 1))
 			.map(({ id, user2 }) => ({ id, user: user2 }));
-		const pedingSent = pending.filter(({ user1 }) => user1.id != 1)
-			.map(({ id, user1 }) => ({ id, user: user1 }));
 
 		return `
-			<div class="sidebar-section">
-				<h3>Friends</h3>
+			<div>
+				<button class="btn btn-toggle text-start text-white opacity-75 w-100 p-0 border-0 mb-2" data-bs-toggle="collapse" data-bs-target="#friends-list" aria-expanded="false">
+					Friends
+				</button>
 
-				<div class="sidebar-section-list">
-					${accepted.map(({ id, user }) => `
-						<div class="sidebar-section-element">
-							<div class="sidebar-section-element-info">
-								<img src="${user.avatar}" class="sidebar-section-avatar" />
+				<div id="friends-list" class="collapse">
+					<ul class="list-unstyled d-flex flex-column gap-2">
+						${accepted.map(({ id, user }) => `
+							<div class="sidebar-section-element d-flex justify-content-between gap-1 p-1 bg-light rounded">
+								<div class="d-flex align-items-center gap-1">
+									<img src="${user.avatar}" class="rounded-circle" />
 
-								<span class="sidebar-section-username">
-									${user.username}
-								<span>
-							</div>
-
-							<div class="sidebar-section-element-controls">
-								<button data-action="message" data-id="${id}">
-									<i class="bi bi-chat-left-dots-fill"></i>
-								</button>
-							</div>
-						</div>
-					`).join("")}
-				</div>
-
-				<div class="sidebar-subsection">
-					<h5>Pending (received)</h5>
-					<div class="sidebar-section-list">
-						${pedingReceived.map(({ id, user }) => `
-							<div class="sidebar-section-element">
-								<div class="sidebar-section-element-info">
-									<img src="${user.avatar}" class="sidebar-section-avatar" />
-
-									<span class="sidebar-section-username">
+									<span class="lh-1">
 										${user.username}
 									<span>
 								</div>
 
-								<div class="sidebar-section-element-controls">
-									<button data-action="refuse" data-id="${id}">
-										<i class="bi bi-x-circle-fill"></i>
-									</button>
-
-									<button data-action="accept" data-id="${id}">
-										<i class="bi bi-check-circle-fill"></i>
+								<div class="d-flex align-items-center gap-1">
+									<button class="bg-transparent p-1 border-0" data-action="message" data-id="${id}">
+										<i class="bi bi-chat-left-dots-fill"></i>
 									</button>
 								</div>
 							</div>
 						`).join("")}
-					</div>
+					</ul>
 				</div>
 
-				<div class="sidebar-subsection">
-					<h5>Pending (sent)</h5>
-					<div class="sidebar-section-list">
-						${pedingSent.map(({ id, user }) => `
-							<div class="sidebar-section-element">
-								<div class="sidebar-section-element-info">
-									<img src="${user.avatar}" class="sidebar-section-avatar" />
+				<div class="mt-2">
+					<button class="btn btn-toggle d-flex gap-2 align-items-center text-start text-white opacity-75 w-100 p-0 border-0 mb-2" data-bs-toggle="collapse" data-bs-target="#friends-received" aria-expanded="false">
+						Invitations
 
-									<span class="sidebar-section-username">
-										${user.username}
-									<span>
-								</div>
+						<span class="badge text-bg-secondary">
+							${invitations.length}
+						</span>
+					</button>
 
-								<div class="sidebar-section-element-controls">
-									<button data-action="cancel" data-id="${id}">
-										<i class="bi bi-x-circle-fill"></i>
-									</button>
+					<div id="friends-received" class="collapse">
+						<ul class="list-unstyled d-flex flex-column gap-2">
+							${invitations.map(({ id, user }) => `
+								<div class="sidebar-section-element d-flex justify-content-between gap-1 p-1 bg-light rounded">
+									<div class="d-flex align-items-center gap-1">
+										<img src="${user.avatar}" class="rounded-circle" />
+
+										<span class="lh-1">
+											${user.username}
+										<span>
+									</div>
+
+									<div class="d-flex align-items-center gap-1">
+										<button class="bg-transparent p-1 border-0" data-action="refuse" data-id="${id}">
+											<i class="bi bi-x-circle-fill"></i>
+										</button>
+
+										<button class="bg-transparent p-1 border-0" data-action="accept" data-id="${id}">
+											<i class="bi bi-check-circle-fill"></i>
+										</button>
+									</div>
 								</div>
-							</div>
-						`).join("")}
+							`).join("")}
+						</ul>
 					</div>
 				</div>
 			</div>

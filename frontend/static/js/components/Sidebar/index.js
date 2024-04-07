@@ -15,10 +15,14 @@ export default class extends Abstract {
 
 	async getHtml() {
 		return `
-			<div class="sidebar-wrapper">
-				<h2>Sidebar</h2>
+			<div class="sidebar-outter-wrapper">
+				<div class="sidebar-wrapper position-absolute overflow-y-scroll p-3">
+					<h2 class="text-white lh-1 mb-4">
+						Menu
+					</h2>
 
-				${await this.friendsSection.getHtml()}
+					${await this.friendsSection.getHtml()}
+				</div>
 			</div>
 		`;
 	}
