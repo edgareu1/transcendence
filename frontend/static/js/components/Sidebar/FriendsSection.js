@@ -27,11 +27,17 @@ export default class extends Abstract {
 				<div class="sidebar-section-list">
 					${accepted.map(({ username, avatar }) => `
 						<div class="sidebar-section-element">
-							<img src="${avatar}" class="sidebar-section-avatar" />
+							<div class="sidebar-section-element-info">
+								<img src="${avatar}" class="sidebar-section-avatar" />
 
-							<span class="sidebar-section-username">
-								${username}
-							<span>
+								<span class="sidebar-section-username">
+									${username}
+								<span>
+							</div>
+
+							<div class="sidebar-section-element-controls">
+								<i class="bi bi-chat-right-dots"></i>
+							</div>
 						</div>
 					`).join("")}
 				</div>
@@ -41,11 +47,19 @@ export default class extends Abstract {
 					<div class="sidebar-section-list">
 						${pedingReceived.map(({ username, avatar }) => `
 							<div class="sidebar-section-element">
-								<img src="${avatar}" class="sidebar-section-avatar" />
+								<div class="sidebar-section-element-info">
+									<img src="${avatar}" class="sidebar-section-avatar" />
 
-								<span class="sidebar-section-username">
-									${username}
-								<span>
+									<span class="sidebar-section-username">
+										${username}
+									<span>
+								</div>
+
+								<div class="sidebar-section-element-controls">
+									<i class="bi bi-x-circle-fill"></i>
+
+									<i class="bi bi-check-circle-fill"></i>
+								</div>
 							</div>
 						`).join("")}
 					</div>
@@ -56,11 +70,17 @@ export default class extends Abstract {
 					<div class="sidebar-section-list">
 						${pedingSent.map(({ username, avatar }) => `
 							<div class="sidebar-section-element">
-								<img src="${avatar}" class="sidebar-section-avatar" />
+								<div class="sidebar-section-element-info">
+									<img src="${avatar}" class="sidebar-section-avatar" />
 
-								<span class="sidebar-section-username">
-									${username}
-								<span>
+									<span class="sidebar-section-username">
+										${username}
+									<span>
+								</div>
+
+								<div class="sidebar-section-element-controls">
+									<i class="bi bi-x-circle-fill"></i>
+								</div>
 							</div>
 						`).join("")}
 					</div>
