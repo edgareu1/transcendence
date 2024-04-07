@@ -166,6 +166,22 @@ export default class Friends {
 
   static #data = INIT_DATA;
 
+  static async create(invited_user_id) {
+    alert(`create: ${invited_user_id}`);
+  }
+
+  static async cancel(friend_request_id) {
+    alert(`cancel: ${friend_request_id}`);
+  }
+
+  static async accept(friend_request_id) {
+    alert(`accept: ${friend_request_id}`);
+  }
+
+  static async refuse(friend_request_id) {
+    alert(`refuse: ${friend_request_id}`);
+  }
+
   static async getAll() {
     return Friends.#data;
   }

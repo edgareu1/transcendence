@@ -47,6 +47,27 @@ main {
   margin-bottom: 12px;
 }
 
+.sidebar-wrapper button {
+  font-size: 20px;
+  opacity: 0.75;
+  background: transparent;
+  padding: 2px;
+  border: none;
+  transition: 0.25s;
+}
+
+.sidebar-wrapper button:hover {
+  opacity: 1;
+}
+
+.sidebar-wrapper button[data-action="cancel"], .sidebar-wrapper button[data-action="refuse"] {
+  color: var(--bs-danger);
+}
+
+.sidebar-wrapper button[data-action="accept"] {
+  color: var(--bs-success);
+}
+
 .sidebar-section {
 }
 
@@ -78,7 +99,7 @@ main {
 .sidebar-section-element-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .sidebar-section-avatar {

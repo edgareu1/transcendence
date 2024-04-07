@@ -40,7 +40,7 @@ export default class extends Abstract {
     return table;
   }
 
-  async addFuncionality() {}
+  async addFunctionality() {}
 
   async getHtml() {
     // fetching data mocked on db.json

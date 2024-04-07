@@ -9,6 +9,10 @@ export default class extends Abstract {
 		this.friendsSection = new FriendsSection();
 	}
 
+	async addFunctionality() {
+		await this.friendsSection.addFunctionality();
+	}
+
 	async getHtml() {
 		return `
 			<div class="sidebar-wrapper">
