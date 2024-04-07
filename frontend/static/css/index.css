@@ -6,6 +6,7 @@ body {
 main {
   margin-top: 66px;
   padding-top: 24px;
+  min-height: calc(100vh - 66px);
 }
 
 @media (max-width: 992px) {
@@ -31,10 +32,8 @@ main {
 }
 
 .sidebar-wrapper {
-  top: -24px;
-  left: 0;
   background-color: var(--bs-dark);
-  height: calc(100vh - 66px);
+  height: calc(100vh - 100px);
   width: 250px;
 }
 
