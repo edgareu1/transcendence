@@ -1,4 +1,4 @@
-import { i18nextInit, renderPage } from "/static/js/services/index.js";
+import { i18nextInit, renderPage, renderSidebar } from "/static/js/services/index.js";
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
@@ -29,5 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  i18nextInit().then(renderPage);
+  const renderAll = () => {
+    renderPage();
+    renderSidebar();
+  }
+
+  i18nextInit().then(renderAll);
 });

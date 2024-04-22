@@ -12,7 +12,7 @@ export default class extends Abstract {
     this.users;
   }
 
-  async addFuncionality() {}
+  async addFunctionality() {}
 
   generateHistoryTable() {
     let table = `<table class="table text-center">
