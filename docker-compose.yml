@@ -10,3 +10,12 @@ services:
       NODE_ENV: development
     volumes:
       - ./frontend/:/app
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/transcendence:/app
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"

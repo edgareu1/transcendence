@@ -2,7 +2,7 @@
 FROM node:16
 
 # Set working directory
-WORKDIR /Users/edgarmarques/code/42/transcendence-new
+WORKDIR /Users/tiago/rep/transcendence
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
